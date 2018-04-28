@@ -13,9 +13,10 @@ public class ValidParentheses {
                 "(]",
                 "{[)]",
                 "{[]}",
+                ""
         };
         for(String s :testS){
-
+            System.out.println(String.format("s=%s, isValid=%b", s, isValid(s)));
         }
 
     }
@@ -28,14 +29,18 @@ public class ValidParentheses {
                 stack.push(c);
             }
             else if(c == ')' || c == ']' || c == '}'){
-                char l = stack.pop();
-                if(! isValidPair(l, c)){
+                if(stack.isEmpty()){
                     return false;
+                }
+                else {
+                    char l = stack.pop();
+                    if(! isValidPair(l, c)){
+                        return false;
+                    }
                 }
             }
         }
-
-        return true;
+        return stack.isEmpty();
     }
 
     // auxiliary method
