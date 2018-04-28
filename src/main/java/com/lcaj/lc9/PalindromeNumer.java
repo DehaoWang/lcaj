@@ -6,8 +6,8 @@ package com.lcaj.lc9;
 public class PalindromeNumer {
     public static void main(String[] args){
         int[] testI = {121, -121, 10};
-        for(int i = 0; i < testI.length; i++){
-            System.out.println(String.format("origin=%-20d, isPalindrome=%b", testI[i], isPalindrome(testI[i])));
+        for(int i: testI){
+            System.out.println(String.format("origin=%-20d, isPalindrome=%b", i, isPalindrome(i)));
         }
     }
 

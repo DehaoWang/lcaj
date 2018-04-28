@@ -24,9 +24,9 @@ public class LetterCombinationsOfPhoneNumber {
                 "2356",
 //                "3174"
         };
-        for(int i = 0; i < testS.length; i++){
-            String digits = testS[i];
-            System.out.println(String.format("origin=%-10s, combination=%s", digits, letterCombinationsRecursive(digits)));
+        for(String digits: testS){
+//            System.out.println(String.format("origin=%-10s, combination=%s", digits, letterCombinationsRecursive(digits)));
+            System.out.println(String.format("origin=%-10s, combination=%s", digits, letterCombinationsQueue(digits)));
         }
 
     }
@@ -98,5 +98,23 @@ public class LetterCombinationsOfPhoneNumber {
             }
         }
         return fullStrs;
+    }
+
+    // use FIFO queue, concat former-length string to new and add them to queue
+    public static List<String> letterCombinationsQueue(String digits){
+        LinkedList<String> ans = new LinkedList<String>();
+        if(digits.isEmpty()) return ans;
+        String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        ans.add("");
+        for(int i = 0; i < digits.length(); i++){
+            System.out.println(ans);
+            int x = Character.getNumericValue(digits.charAt(i));
+            while(ans.peek().length() == i){
+                String t = ans.remove();
+                for(char s : mapping[x].toCharArray())
+                    ans.add(t+s);
+            }
+        }
+        return ans;
     }
 }

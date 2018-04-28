@@ -10,8 +10,7 @@ public class LongestCommonPrefix {
                 {"dog", "racecar", "car"},
                 {"father", "mother", "me"},
         };
-        for(int i = 0; i < strs.length; i++){
-            String[] testStrs = strs[i];
+        for(String[] testStrs: strs){
             System.out.println(String.format("lcp=%s", longestCommonPrefix(testStrs)));
         }
     }

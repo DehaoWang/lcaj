@@ -35,8 +35,8 @@ public class StringToInteger {
                 ,
                 "18446744073709551617"
         };
-        for(int i = 0; i < strs.length; i++){
-            System.out.println(String.format("origin=%-20s, atoi=%-20d, atoiGS=%-20d", strs[i], myAtoi(strs[i]), myAtoiGS(strs[i])));
+        for(String s: strs){
+            System.out.println(String.format("origin=%-20s, atoi=%-20d, atoiGS=%-20d", s, myAtoi(s), myAtoiGS(s)));
         }
 
     }

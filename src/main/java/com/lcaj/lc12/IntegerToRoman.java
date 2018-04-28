@@ -32,8 +32,7 @@ public class IntegerToRoman {
 
     public static void main(String[] args){
         int[] testInt = {0, 3, 4, 9, 58, 100, 1994};
-        for(int i = 0; i < testInt.length; i++){
-            int testI = testInt[i];
+        for(int testI: testInt){
             System.out.println(String.format("int=%-3d, roman=%s", testI, intToRoman(testI)));
         }
 

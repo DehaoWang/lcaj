@@ -23,8 +23,7 @@ public class RomanToInteger {
 
     public static void main(String[] args){
         String[] testRoman = {"III", "IV", "IX", "LVIII", "MCMXCIV"};
-        for(int i = 0; i < testRoman.length; i++){
-            String testR = testRoman[i];
+        for(String testR: testRoman){
             System.out.println(String.format("testR=%-10s, int=%d", testR, romanToInt(testR)));
         }
 

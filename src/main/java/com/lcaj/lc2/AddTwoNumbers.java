@@ -2,6 +2,7 @@ package com.lcaj.lc2;
 
 import com.lcaj.model.ListNode;
 
+
 /**
  * Created by wangdehao on 18/4/11.
  */
@@ -13,47 +14,24 @@ public class AddTwoNumbers {
 
     public static void main(String[] args){
         int[] a1 = new int[]{2, 4, 3};
-//        int[] a1 = new int[]{5};
-        ListNode l1 = getListFromArray(a1);
-        printListNode(l1);
+        ListNode l1 = ListNode.getListFromArray(a1);
+        ListNode.printListNode(l1);
 
         int[] a2 = new int[]{5, 6, 4};
-//        int[] a2 = new int[]{5};
-        ListNode l2 = getListFromArray(a2);
-        printListNode(l2);
+        ListNode l2 = ListNode.getListFromArray(a2);
+        ListNode.printListNode(l2);
 
         ListNode sumList = addTwoNumbers(l1, l2);
         ListNode sumListGS = addTwoNumbersGS(l1, l2);
-//        printListNode(sumList);
-        printListNode(sumListGS);
+        ListNode.printListNode(sumListGS);
 
 
         // follow up: non-reversed order
         ListNode nonRevSum = addTwoNumbersNonRev(l1,l2);
-        printListNode(nonRevSum);
+        ListNode.printListNode(nonRevSum);
 
     }
 
-    public static ListNode getListFromArray(int[] a){
-        if(a.length <= 0){
-            return null;
-        }
-        ListNode first = new ListNode(a[0]);
-        ListNode curr = first;
-        for(int i = 1; i < a.length; i++){
-            curr.next = new ListNode(a[i]);
-            curr = curr.next;
-        }
-        return first;
-    }
-
-    public static void printListNode(ListNode l){
-        System.out.println("Printing Node List");
-        while (l != null){
-            System.out.println(l.val);
-            l = l.next;
-        }
-    }
 
     /**
      * algorithm
@@ -120,26 +98,11 @@ public class AddTwoNumbers {
 
     // follow up: non-reversed order
     public static ListNode addTwoNumbersNonRev(ListNode l1, ListNode l2) {
-        ListNode revL1 = reverseList(l1);
-        ListNode revL2 = reverseList(l2);
+        ListNode revL1 = ListNode.reverseList(l1);
+        ListNode revL2 = ListNode.reverseList(l2);
         ListNode revSum = addTwoNumbersGS(revL1, revL2);
-        return reverseList(revSum);
+        return ListNode.reverseList(revSum);
     }
 
-    // auxiliary method
-    public static ListNode reverseList(ListNode l){
-        ListNode dummyNode = new ListNode(0);
-        while(l != null){
-            // temp
-            ListNode temp = l.next;
 
-            // concat
-            l.next = dummyNode.next;
-            dummyNode.next = l;
-
-            // move
-            l = temp;
-        }
-        return dummyNode.next;
-    }
 }

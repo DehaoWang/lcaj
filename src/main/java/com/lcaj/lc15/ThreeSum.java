@@ -10,8 +10,7 @@ import java.util.List;
 public class ThreeSum {
     public static void main(String[] args){
         int[][] testA = {{-1, 0, 1, 2, -1, -4}};
-        for(int i = 0; i < testA.length; i++){
-            int[] a = testA[i];
+        for(int[] a: testA){
             System.out.println(String.format("a=%s, res=%s", a, threeSum(a)));
         }
 
