@@ -35,6 +35,7 @@ public class GenerateParentheses {
         for(int i = 0; i < Math.pow(2, len); i++){
             StringBuilder sb = new StringBuilder();
             int count = len;
+            // easy to make mistake
             int num = i;
             while(count > 0){
                 int r = num % 2;

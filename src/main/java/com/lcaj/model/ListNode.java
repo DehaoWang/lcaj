@@ -48,4 +48,12 @@ public class ListNode {
         }
         return dummyNode.next;
     }
+
+    public static ListNode[] getListFrom2dArray(int[][] m) {
+        ListNode[] lists = new ListNode[m.length];
+        for(int i = 0; i < m.length; i++){
+            lists[i] = getListFromArray(m[i]);
+        }
+        return lists;
+    }
 }
