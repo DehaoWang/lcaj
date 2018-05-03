@@ -27,9 +27,15 @@ public class ListNode {
     public static void printListNode(ListNode l){
         System.out.println("Printing Node List");
         while (l != null){
-            System.out.println(l.val);
+            System.out.print(l.val+" -> ");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             l = l.next;
         }
+        System.out.println();
     }
 
     // auxiliary method
