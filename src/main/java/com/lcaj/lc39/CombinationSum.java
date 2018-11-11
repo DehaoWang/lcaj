@@ -29,7 +29,6 @@ public class CombinationSum {
         return results;
     }
 
-    // TODO: 18/11/4 ???
     // problem 2: should use position instead of value for distinction
     public static void backtrackForCombinationSum(int[] candidates, int target, List<List<Integer>> results, List<Integer> tempList, int position) {
 
