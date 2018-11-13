@@ -22,9 +22,21 @@ public class JumpGame {
 
     public static boolean canJump(int[] nums) {
 //        return canJumpRecursive(nums, 0);
-        return canJumpMemoFinal(nums);
+//        return canJumpMemoFinal(nums);
 //        return canJumpPaint(nums);
 //        return canJumpMemo(nums);
+        return canJumpGreedy(nums);
+    }
+
+    public static boolean canJumpGreedy(int[] nums) {
+        int n = nums.length;
+        int reach = 0;
+        for (int i = 0; i < n; ++i) {
+            // clever: "i > reach" means current index is unreachable
+            if (i > reach || reach >= n - 1) break;
+            reach = reach > i + nums[i] ? reach : i + nums[i];
+        }
+        return reach >= n - 1;
     }
 
     private static boolean canJumpMemoFinal(int[] nums) {
