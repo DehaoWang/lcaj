@@ -25,7 +25,7 @@ public class SearchedInRotatedSortedArray {
         if (target == pivot) {
             return p;
         } else if (target < pivot) {
-            return binarySearchRecursive(nums, 0, p - 1, target);
+            return binarySearchRecursive(nums, l, p - 1, target);
         } else if (target > pivot) {
             return binarySearchRecursive(nums, p + 1, r, target);
         }

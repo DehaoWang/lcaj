@@ -15,12 +15,14 @@ public class MatrixMethods {
     }
 
     public static void printMatrix(int[][] matrix) {
-        int len = matrix.length;
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j < len; j++) {
+        int h = matrix.length;
+        int w = matrix[0].length;
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
