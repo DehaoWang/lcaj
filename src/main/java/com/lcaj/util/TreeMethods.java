@@ -11,33 +11,36 @@ import java.util.Stack;
  */
 public class TreeMethods {
 
+    public static final String DELIMETER = " ";
+    private static final String NULL_NODE = "x";
+
     public static void inorderTraversalRecursive(TreeNode root) {
         if (root != null) {
-            preorderTraversalRecursive(root.left);
-            System.out.println(root.val);
-            preorderTraversalRecursive(root.right);
+            inorderTraversalRecursive(root.left);
+            System.out.print(root.val + DELIMETER);
+            inorderTraversalRecursive(root.right);
         } else {
-            System.out.println("n");
+            System.out.print(NULL_NODE + DELIMETER);
         }
     }
 
     public static void preorderTraversalRecursive(TreeNode root) {
         if (root != null) {
-            System.out.println(root.val);
+            System.out.print(root.val + DELIMETER);
             preorderTraversalRecursive(root.left);
             preorderTraversalRecursive(root.right);
         } else {
-            System.out.println("n");
+            System.out.print(NULL_NODE + DELIMETER);
         }
     }
 
     public static void postorderTraversalRecursive(TreeNode root) {
         if (root != null) {
-            preorderTraversalRecursive(root.left);
-            preorderTraversalRecursive(root.right);
-            System.out.println(root.val);
+            postorderTraversalRecursive(root.left);
+            postorderTraversalRecursive(root.right);
+            System.out.print(root.val + DELIMETER);
         } else {
-            System.out.println("n");
+            System.out.print(NULL_NODE + DELIMETER);
         }
     }
 
@@ -67,5 +70,23 @@ public class TreeMethods {
                 stack.add(tn.left);
             }
         }
+    }
+
+    public static void preorderTraversal(TreeNode root) {
+        System.out.println("pre order: ");
+        preorderTraversalRecursive(root);
+        System.out.println();
+    }
+
+    public static void inorderTraversal(TreeNode root) {
+        System.out.println("in order: ");
+        inorderTraversalRecursive(root);
+        System.out.println();
+    }
+
+    public static void postorderTraversal(TreeNode root) {
+        System.out.println("post order: ");
+        postorderTraversalRecursive(root);
+        System.out.println();
     }
 }
