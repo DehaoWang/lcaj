@@ -29,9 +29,15 @@ public class MinDepthOfBT {
         } else if (root.left == null && root.right == null) {
             return 1;
         } else {
-            int maxL = minDepthRecursive(root.left);
-            int maxR = minDepthRecursive(root.right);
-            return (maxL > maxR ? maxR : maxL) + 1;
+            int minL = minDepthRecursive(root.left);
+            int minR = minDepthRecursive(root.right);
+            if(root.left == null){
+                return minR + 1;
+            }
+            else if(root.right == null){
+                return minL + 1;
+            }
+            return (minL > minR ? minR : minL) + 1;
         }
     }
 
