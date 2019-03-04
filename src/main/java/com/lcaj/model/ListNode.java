@@ -25,15 +25,16 @@ public class ListNode {
     }
 
     public static void printListNode(ListNode l){
+        ListNode curr = l;
         System.out.println("Printing Node List");
-        while (l != null){
-            System.out.print(l.val+" -> ");
+        while (curr != null){
+            System.out.print(curr.val+" -> ");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            l = l.next;
+            curr = curr.next;
         }
         System.out.println();
     }

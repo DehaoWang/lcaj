@@ -9,7 +9,7 @@ import java.util.Stack;
 /**
  * Created by wangdehao on 18/11/26.
  */
-public class BTInorderTraversal {
+public class BTInOrderTraversal {
     public static void main(String[] args) {
 
         TreeNode root = new TreeNode(1);
@@ -67,7 +67,25 @@ public class BTInorderTraversal {
             preorderTraversalRecursive(root.left, result);
             preorderTraversalRecursive(root.right, result);
         } else {
-            result.add(0);
+//            result.add(0);
+        }
+    }
+
+    public static List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        postorderTraversalRecursive(root, result);
+
+        return result;
+    }
+
+    private static void postorderTraversalRecursive(TreeNode root, List<Integer> result) {
+        if (root != null) {
+            postorderTraversalRecursive(root.left, result);
+            postorderTraversalRecursive(root.right, result);
+            result.add(root.val);
+        } else {
+//            result.add(0);
         }
     }
 }

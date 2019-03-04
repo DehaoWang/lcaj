@@ -41,6 +41,7 @@ public class TreeMethods {
             System.out.print(root.val + DELIMETER);
         } else {
             System.out.print(NULL_NODE + DELIMETER);
+
         }
     }
 
