@@ -1,5 +1,7 @@
 package com.lcaj.lc67;
 
+import com.lcaj.util.ArrayMethods;
+
 /**
  * Created by wangdehao on 18/11/13.
  */
@@ -25,8 +27,8 @@ public class AddBinary {
         char[] cB = b.toCharArray();
         int maxLen = (cA.length > cB.length ? cA.length : cB.length) + 1;
         char[] cS = new char[maxLen];
-        reverse(cA);
-        reverse(cB);
+        ArrayMethods.reverseByIndices(cA, 0, cA.length - 1);
+        ArrayMethods.reverseByIndices(cB, 0, cB.length - 1);
 
         int iA = 0, iB = 0, iS = 0;
         int carry = 0;
@@ -43,10 +45,10 @@ public class AddBinary {
                 cS[iS] = (char) (dS % 2 + '0');
                 carry = 1;
             }
-            if(iA < cA.length){
+            if (iA < cA.length) {
                 iA++;
             }
-            if(iB < cB.length){
+            if (iB < cB.length) {
                 iB++;
             }
             iS++;
@@ -55,7 +57,7 @@ public class AddBinary {
         if (carry > 0) {
             cS[iS] = (char) (carry + '0');
         }
-        reverse(cS);
+        ArrayMethods.reverseByIndices(cS, 0, cS.length - 1);
 
         String res = "";
         int firstIndex = carry > 0 ? 0 : 1;
@@ -65,14 +67,4 @@ public class AddBinary {
         return res;
     }
 
-    public static void reverse(char[] c) {
-        int l = 0, r = c.length - 1;
-        while (l < r) {
-            char temp = c[l];
-            c[l] = c[r];
-            c[r] = temp;
-            l++;
-            r--;
-        }
-    }
 }
