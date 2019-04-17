@@ -1,5 +1,7 @@
 package com.lcaj.lc198;
 
+import com.lcaj.lc101.SymmetricTree;
+import com.lcaj.lc213.HouseRobberII;
 import com.lcaj.util.ArrayMethods;
 
 /**
@@ -16,6 +18,7 @@ public class HouseRobber {
         for (int[] house : houses) {
             System.out.println(rob(house));
             System.out.println(rob2(house));
+            System.out.println(HouseRobberII.robInRange(house, 0, house.length - 1));
 //            System.out.println(robGreedy(house));
         }
     }
