@@ -18,10 +18,28 @@ public class InvertBinaryTree {
         root3.left.left = new TreeNode(2);
         root3.left.right = new TreeNode(1);
         TreeMethods.inorderTraversal(root3);
+
+        TreeNode root4 = invertTree(root3);
+        TreeMethods.inorderTraversal(root4);
     }
 
     public static TreeNode invertTree(TreeNode root) {
 
-        return null;
+        invertTreeRecursive(root);
+
+        return root;
     }
+
+    public static void invertTreeRecursive(TreeNode curr) {
+        if (curr == null) {
+            return;
+        }
+        TreeNode temp = curr.left;
+        curr.left = curr.right;
+        curr.right = temp;
+
+        invertTreeRecursive(curr.left);
+        invertTreeRecursive(curr.right);
+    }
+
 }
