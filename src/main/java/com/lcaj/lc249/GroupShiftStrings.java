@@ -50,6 +50,7 @@ public class GroupShiftStrings {
                 c += 26 - diff;
             } else {
                 c -= diff;
+                System.out.println(c);
             }
             key += c;
         }
