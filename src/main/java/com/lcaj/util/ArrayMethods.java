@@ -33,6 +33,7 @@ public class ArrayMethods {
             r--;
         }
     }
+
     public static void reverseByIndices(int[] nums, int l, int r) {
         while (l < r) {
             int temp = nums[l];
@@ -43,4 +44,10 @@ public class ArrayMethods {
         }
     }
 
+    public static void printArray(double[] nums) {
+        for (double i : nums) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+    }
 }
