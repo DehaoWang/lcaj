@@ -15,7 +15,7 @@ public class BTInOrderTraversal {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        List<Integer> result = inorderTraversal(root);
+        List<Integer> result = preorderTraversal(root);
         System.out.println(result);
     }
 

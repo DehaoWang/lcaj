@@ -33,6 +33,7 @@ public class UniquePaths {
         }
         for (int j = 0; j < n; j++) {
             memo[0][j] = 1;
+
         }
 
         for (int i = 1; i < m; i++) {

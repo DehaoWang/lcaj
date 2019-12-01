@@ -1,7 +1,6 @@
 package com.lcaj.lc283;
 
 import com.lcaj.util.ArrayMethods;
-
 /**
  * Created by wangdehao on 19/5/28.
  */

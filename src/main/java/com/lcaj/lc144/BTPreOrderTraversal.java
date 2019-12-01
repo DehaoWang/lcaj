@@ -22,7 +22,9 @@ public class BTPreOrderTraversal {
         root.right.left = new TreeNode(3);
         root.right.right = new TreeNode(7);
         TreeMethods.preorderTraversal(root);
-        List<Integer> result = BTInOrderTraversal.preorderTraversal(root);
+//        List<Integer> result = BTInOrderTraversal.preorderTraversal(root);
+        List<Integer> result = BTInOrderTraversal.postorderTraversal(root);
+
 //        List<Integer> result = postorderTraversalIterative(root);
         System.out.println(result);
     }

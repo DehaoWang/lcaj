@@ -50,4 +50,11 @@ public class ArrayMethods {
         }
         System.out.println();
     }
+
+    public static void printArray(String[] string) {
+        for (String s : string) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
+    }
 }
