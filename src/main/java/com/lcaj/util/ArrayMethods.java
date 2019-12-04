@@ -57,4 +57,11 @@ public class ArrayMethods {
         }
         System.out.println();
     }
+
+    public static void printArray(boolean[] bools) {
+        for (Boolean b : bools) {
+            System.out.print(b + ", ");
+        }
+        System.out.println();
+    }
 }
