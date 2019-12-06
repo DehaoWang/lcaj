@@ -13,14 +13,14 @@ public class GraphMethods {
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);
 
         if (graph.isUndirected()) {
-            boolean[] visited = new boolean[graph.getAdjacencyMatrixUG().length];
+            boolean[] visited = new boolean[graph.getAdjacencyMatrix().length];
             dfsTraversalRecursive(graph, visited, startIndex, visitSequence);
         }
     }
 
     private static void dfsTraversalRecursive(Graph graph, boolean[] visited, int curr, List<Integer> visitSequence) {
 
-        int[][] adjacencyMatrix = graph.getAdjacencyMatrixUG();
+        Double[][] adjacencyMatrix = graph.getAdjacencyMatrix();
         visited[curr] = true;
         System.out.print(graph.getName(curr) + " -> ");
         for (int next : visitSequence) {
@@ -40,7 +40,7 @@ public class GraphMethods {
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);
 
         if (graph.isUndirected()) {
-            int[][] adjacencyMatrix = graph.getAdjacencyMatrixUG();
+            Double[][] adjacencyMatrix = graph.getAdjacencyMatrix();
             boolean[] visited = new boolean[adjacencyMatrix.length];
 
             Stack<Integer> stack = new Stack<>();
@@ -75,7 +75,7 @@ public class GraphMethods {
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);
 
         if (graph.isUndirected()) {
-            int[][] adjacencyMatrix = graph.getAdjacencyMatrixUG();
+            Double[][] adjacencyMatrix = graph.getAdjacencyMatrix();
             boolean[] visited = new boolean[adjacencyMatrix.length];
 
             Stack<Integer> stack = new Stack<>();
@@ -110,7 +110,7 @@ public class GraphMethods {
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);
 
         if (graph.isUndirected()) {
-            int[][] adjacencyMatrix = graph.getAdjacencyMatrixUG();
+            Double[][] adjacencyMatrix = graph.getAdjacencyMatrix();
             boolean[] visited = new boolean[adjacencyMatrix.length];
 
             Queue<Integer> queue = new LinkedList<>();
@@ -139,7 +139,7 @@ public class GraphMethods {
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);
 
         if (graph.isUndirected()) {
-            int[][] adjacencyMatrix = graph.getAdjacencyMatrixUG();
+            Double[][] adjacencyMatrix = graph.getAdjacencyMatrix();
             boolean[] visited = new boolean[adjacencyMatrix.length];
 
             Queue<Integer> queue = new LinkedList<>();

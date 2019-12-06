@@ -1,78 +1,111 @@
 package com.lcaj.model.graph;
 
-import com.lcaj.util.MatrixMethods;
-
 import java.util.*;
 
 public class Graph {
-    public static final int CONSTANT_UNDIRECTED_AMV = 0;
-    int[][] adjacencyMatrixUG;
-    double[][] adjacencyMatrixDG;
+    public static final double CONSTANT_UNDIRECTED_AMV = Double.MAX_VALUE;
+    private static final String EDGE_DELIMITER_VERTEX = "-";
+    private static final String EDGE_DELIMITER_WEIGHT = ":";
+    private static final String DEFAULT_PRINT_ELEMENT = "XXX";
+
+    Double[][] adjacencyMatrix;
     boolean undirected = true;
-    int numVertice;
+    boolean weighted = false;
+    int numVertices;
 
     Map<Integer, Vertex> index2Vertex = new HashMap<>();
     Map<String, Integer> vertexName2Index = new HashMap<>();
     Map<Integer, String> index2VertexName = new HashMap<>();
 
 
-    public Graph(Set<String> vertices, Set<String> edges, boolean undirected) {
+    public Graph(Set<String> vertices, Set<String> edges, boolean undirected, boolean weighted) {
         this.undirected = undirected;
-        this.numVertice = vertices.size();
-        if (undirected) {
-            adjacencyMatrixUG = new int[numVertice][numVertice];
-        } else {
-            adjacencyMatrixDG = new double[numVertice][numVertice];
-            for (int k = 0; k < numVertice * numVertice; k++) {
-                adjacencyMatrixDG[k / numVertice][k % numVertice] = Double.MAX_VALUE;
-            }
-        }
+        this.weighted = weighted;
+        this.numVertices = vertices.size();
 
+        // initialization
+        adjacencyMatrix = new Double[numVertices][numVertices];
+        for (int k = 0; k < numVertices * numVertices; k++) {
+            adjacencyMatrix[k / numVertices][k % numVertices] = Double.MAX_VALUE;
+        }
         // build vertices
         int vIndex = 0;
         for (String v : vertices) {
             vertexName2Index.put(v, vIndex);
             index2VertexName.put(vIndex, v);
             vIndex++;
-            System.out.print(v + " ");
+            System.out.print(String.format("%-3s ", v));
         }
         System.out.println();
         // build edges
         for (String e : edges) {
             int srcIdx = vertexName2Index.get(e.substring(0, 1));
             int dstIdx = vertexName2Index.get(e.substring(1));
+            adjacencyMatrix[srcIdx][dstIdx] = 1.0;
             if (undirected) {
-                adjacencyMatrixUG[srcIdx][dstIdx] = 1;
-                adjacencyMatrixUG[dstIdx][srcIdx] = 1;
-            } else {
-                adjacencyMatrixDG[srcIdx][dstIdx] = 1.0;
+                adjacencyMatrix[dstIdx][srcIdx] = 1.0;
             }
         }
-        if (undirected) {
-            MatrixMethods.printMatrix(adjacencyMatrixUG);
-        } else {
-            MatrixMethods.printMatrix(adjacencyMatrixDG);
-        }
+        printMatrixForGraph();
+
     }
 
-    public static int getConstantUndirectedAmv() {
+    public Graph(String verticesStr, String edgesStr, boolean undirected, boolean weighted) {
+        String directInfo = undirected ? "Undirected" : "Directed";
+        String weightInfo = weighted ? "Weighted" : "Unweighted";
+
+        System.out.println(String.format("\n\n%s-%s Graph:\nVertices: %s, \nEdges: %s",
+                directInfo, weightInfo, verticesStr, edgesStr));
+        Set<String> vertices = new HashSet<>(Arrays.asList(verticesStr.split(",")));
+        Set<String> edges = new HashSet<>(Arrays.asList(edgesStr.split(",")));
+
+        this.undirected = undirected;
+        this.weighted = weighted;
+        this.numVertices = vertices.size();
+
+        // initialization
+        adjacencyMatrix = new Double[numVertices][numVertices];
+        for (int k = 0; k < numVertices * numVertices; k++) {
+            adjacencyMatrix[k / numVertices][k % numVertices] = Double.MAX_VALUE;
+        }
+        // build vertices
+        int vIndex = 0;
+        for (String v : vertices) {
+            vertexName2Index.put(v, vIndex);
+            index2VertexName.put(vIndex, v);
+            vIndex++;
+            System.out.print(String.format("%-3s ", v));
+        }
+        System.out.println();
+        // build edges
+        for (String e : edges) {
+            String[] tokens = e.split(EDGE_DELIMITER_WEIGHT);
+
+            String[] vPair = tokens[0].split(EDGE_DELIMITER_VERTEX);
+            int srcIdx = vertexName2Index.get(vPair[0]);
+            int dstIdx = vertexName2Index.get(vPair[1]);
+
+            Double weight = weighted ? Double.parseDouble(tokens[1]) : 1.0;
+
+            adjacencyMatrix[srcIdx][dstIdx] = weight;
+            if (undirected) {
+                adjacencyMatrix[dstIdx][srcIdx] = weight;
+            }
+        }
+        printMatrixForGraph();
+//        Graph(vertices, edges, undirected, weighted);
+    }
+
+    public static double getConstantUndirectedAmv() {
         return CONSTANT_UNDIRECTED_AMV;
     }
 
-    public int[][] getAdjacencyMatrixUG() {
-        return adjacencyMatrixUG;
+    public Double[][] getAdjacencyMatrix() {
+        return adjacencyMatrix;
     }
 
-    public void setAdjacencyMatrixUG(int[][] adjacencyMatrixUG) {
-        this.adjacencyMatrixUG = adjacencyMatrixUG;
-    }
-
-    public double[][] getAdjacencyMatrixDG() {
-        return adjacencyMatrixDG;
-    }
-
-    public void setAdjacencyMatrixDG(double[][] adjacencyMatrixDG) {
-        this.adjacencyMatrixDG = adjacencyMatrixDG;
+    public void setAdjacencyMatrix(Double[][] adjacencyMatrix) {
+        this.adjacencyMatrix = adjacencyMatrix;
     }
 
     public boolean isUndirected() {
@@ -113,13 +146,26 @@ public class Graph {
 
     public List<Integer> getVisitSequence(boolean visitPreference) {
         List<Integer> visitSequence = new ArrayList<>();
-        for (int i = 0; i < numVertice; i++) {
+        for (int i = 0; i < numVertices; i++) {
             if (visitPreference) {
                 visitSequence.add(i);
-            }else {
-                visitSequence.add(numVertice - 1 - i);
+            } else {
+                visitSequence.add(numVertices - 1 - i);
             }
         }
         return visitSequence;
+    }
+
+    // print graph adjacency matrix
+    private void printMatrixForGraph() {
+        int h = adjacencyMatrix.length;
+        int w = adjacencyMatrix[0].length;
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                String output = adjacencyMatrix[i][j] == CONSTANT_UNDIRECTED_AMV ? DEFAULT_PRINT_ELEMENT : adjacencyMatrix[i][j].toString();
+                System.out.print(String.format("%-3s ", output));
+            }
+            System.out.println();
+        }
     }
 }
