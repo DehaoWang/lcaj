@@ -23,14 +23,10 @@ public class Permutations {
     }
 
     public static List<List<Integer>> permute(int[] nums) {
-
-//        Set<Integer> numSet = new HashSet<>();
-//        for (int n : nums) {
-//            numSet.add(n);
-//        }
-//        return permuteRecursive(numSet);
         List<List<Integer>> results = new ArrayList<>();
-        backtrackForPermutation(nums, new ArrayList<>(), results);
+//        backtrackForPermutation(nums, new ArrayList<>(), results);
+        backtrackForPermutation2(nums, new ArrayList<>(), results);
+
         return results;
     }
 
@@ -39,12 +35,25 @@ public class Permutations {
             results.add(new ArrayList<>(tempList));
         } else {
             for (int i : nums) {
-                if (tempList.contains(i)) {
-                    continue;
+                if (!tempList.contains(i)) {
+                    tempList.add(i);
+                    backtrackForPermutation(nums, tempList, results);
+                    tempList.remove(tempList.size() - 1);
                 }
-                tempList.add(i);
-                backtrackForPermutation(nums, tempList, results);
-                tempList.remove(tempList.size() - 1);
+            }
+        }
+    }
+
+    public static void backtrackForPermutation2(int[] nums, List<Integer> tempList, List<List<Integer>> results) {
+        if (tempList.size() == nums.length) {
+            results.add(new ArrayList<>(tempList));
+        } else {
+            for (int i : nums) {
+                if (!tempList.contains(i)) {
+                    List<Integer> copy = new ArrayList<>(tempList);
+                    copy.add(i);
+                    backtrackForPermutation2(nums, copy, results);
+                }
             }
         }
     }

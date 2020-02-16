@@ -144,6 +144,14 @@ public class Graph {
         return index2VertexName.get(index);
     }
 
+    public int getNumVertices() {
+        return numVertices;
+    }
+
+    public void setNumVertices(int numVertices) {
+        this.numVertices = numVertices;
+    }
+
     public List<Integer> getVisitSequence(boolean visitPreference) {
         List<Integer> visitSequence = new ArrayList<>();
         for (int i = 0; i < numVertices; i++) {

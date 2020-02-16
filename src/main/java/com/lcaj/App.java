@@ -92,6 +92,7 @@ public class App {
         GraphMethods.dfsTraversalIterativeLabelWhenPop(graph1, 0, false);
         GraphMethods.bfsTraversalIterativeLabelWhenPop(graph1, 0, true);
 
+        System.out.println(GraphMethods.getMinPathDijkstra(graph1, 0, true));
     }
-
 }
+
