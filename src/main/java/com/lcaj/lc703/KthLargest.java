@@ -5,6 +5,8 @@ import com.lcaj.util.ArrayMethods;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class KthLargest {
@@ -20,21 +22,22 @@ public class KthLargest {
         int[] numsF = readArrayFromFile("/Users/mtdp1/Downloads/Lc703_nums");
 //        System.out.println(numsF.length);
         KthLargest obj = new KthLargest(9999, numsF);
-//        int[] sortedNumF = numsF.clone();
-//        Arrays.sort(sortedNumF);
-//        for(int i = 0; i < 5; i++){
-//            System.out.println(sortedNumF[i]);
-//
-//        }
-//        System.out.println(sortedNumF[0]);
-//        System.out.println(sortedNumF[1]);
+
         int[] next = {};
 //        int[] next = {3, 5, 10, 9, 4};
         int[] nextF = readArrayFromFile("/Users/mtdp1/Downloads/Lc703_next");
         for (int i : nextF) {
             int param_1 = obj.add(i);
+//            System.out.println(param_1);
+        }
+
+        int[] nums1 = {4, 5, 8, 2};
+        KthLargest obj1 = new KthLargest(9999, numsF, true);
+        for (int i : nextF) {
+            int param_1 = obj1.add(i, true);
             System.out.println(param_1);
         }
+
 
 
 //        int[] copy = nums.clone();
@@ -50,7 +53,7 @@ public class KthLargest {
         String line = sc.nextLine();
         String[] tokens = line.split(",");
         int[] array = new int[tokens.length];
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = Integer.parseInt(tokens[i]);
         }
         return array;
@@ -123,9 +126,9 @@ public class KthLargest {
         }
     }
 
-    public void buildHeap(int[] heap, boolean isMin){
+    public void buildHeap(int[] heap, boolean isMin) {
         int i = heap.length / 2 - 1;
-        while (i >= 0){
+        while (i >= 0) {
             conditionalHeapify(heap, i, isMin);
             i--;
         }
@@ -141,7 +144,6 @@ public class KthLargest {
             }
         }
     }
-
 
 
     private void heapShiftMin(int[] heap, int p, int l, int r, boolean isMin) {
@@ -175,5 +177,30 @@ public class KthLargest {
         nums[j] = temp;
     }
 
+    private PriorityQueue priorityQueue;
 
+    public KthLargest(int k, int[] nums, boolean pq) {
+        len = k;
+        priorityQueue = new PriorityQueue<Integer>();
+        for (int n : nums) {
+            add(n, true);
+        }
+    }
+
+    public int add(int val, boolean pq){
+        if(priorityQueue.size() < len){
+            priorityQueue.offer(val);
+//            priorityQueue.add(val);
+
+            return (Integer) priorityQueue.peek();
+        }else {
+            int kth = (Integer) priorityQueue.peek();
+            if(val <= kth){
+                return kth;
+            }else {
+                priorityQueue.add(val);
+                return (Integer) priorityQueue.poll();
+            }
+        }
+    }
 }

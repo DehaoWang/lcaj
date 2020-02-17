@@ -184,8 +184,8 @@ public class GraphMethods {
                 }
             }
         }
-        ArrayMethods.printArray(distance);
-        ArrayMethods.printArray(prev);
+//        ArrayMethods.printArray(distance);
+//        ArrayMethods.printArray(prev);
         return distance;
     }
 }

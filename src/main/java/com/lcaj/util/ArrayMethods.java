@@ -66,41 +66,70 @@ public class ArrayMethods {
         System.out.println();
     }
 
-    public static void heapAdjustMin(int[] heap, int length, boolean isMin) {
-        for(int i = 0; i < length; i++){
-            for (int j = length - 1; j > i; j -= 2) {
-                int parent = (j - 1) / 2;
-                int left = parent * 2 + 1;
-                int right = parent * 2 + 2;
-                heapShiftMin(heap, parent, left, right, isMin);
+    // search methods:
+    public static int binarySearch(int[] nums, int target) {
+        int l = 0, r = nums.length - 1;
+        int m;
+        while (l <= r) {
+            m = l + (r - l) / 2;
+            if (target > nums[m]) {
+                l = m + 1;
+            } else if (target < nums[m]) {
+                r = m - 1;
+            } else {
+                return m;
             }
+        }
+        return -1;
+    }
+
+    // heap methods:
+    public static void heapSort(int[] nums, boolean asc) {
+        int size = nums.length;
+        buildHeap(nums, size, !asc);
+        while (size > 0) {
+            swap(nums, 0, size - 1);
+            size--;
+            conditionalHeapify(nums, 0, size, !asc);
+//            size--;
         }
     }
 
-    private static void heapShiftMin(int[] heap, int p, int l, int r, boolean isMin) {
-        if (r >= heap.length) {
-            if ((isMin && heap[l] < heap[p])
-                    || (!isMin && heap[l] > heap[p])) {
-                swap(heap, l, p);
-            }
+    public static void buildHeap(int[] nums, int size, boolean isMin) {
+        if(nums == null || nums.length == 0){
             return;
         }
-
-        int maxIdx;
-        int minIdx;
-        if (heap[l] > heap[r]) {
-            maxIdx = heap[l] > heap[p] ? l : p;
-            minIdx = heap[r] < heap[p] ? r : p;
-        } else {
-            maxIdx = heap[r] > heap[p] ? r : p;
-            minIdx = heap[l] < heap[p] ? l : p;
-        }
-        if (isMin && minIdx != p) {
-            swap(heap, minIdx, p);
-        } else if (!isMin && maxIdx != p) {
-            swap(heap, maxIdx, p);
+        int i = size / 2 - 1;
+        while (i >= 0) {
+            conditionalHeapify(nums, i, size, isMin);
+            i--;
         }
     }
 
-
+    public static void conditionalHeapify(int[] heap, int p, int limit, boolean isMin) {
+        int l = p * 2 + 1, r = p * 2 + 2;
+        int maxIdx = -1, minIdx = -1;
+        if (l >= limit) {
+            return;
+        } else {
+            if (r >= limit) {
+                maxIdx = l;
+                minIdx = l;
+            } else {
+                maxIdx = heap[l] > heap[r] ? l : r;
+                minIdx = heap[l] > heap[r] ? r : l;
+            }
+            if (isMin) {
+                if (heap[minIdx] < heap[p]) {
+                    swap(heap, minIdx, p);
+                    conditionalHeapify(heap, minIdx, limit, isMin);
+                }
+            } else {
+                if (heap[maxIdx] > heap[p]) {
+                    swap(heap, maxIdx, p);
+                    conditionalHeapify(heap, maxIdx, limit, isMin);
+                }
+            }
+        }
+    }
 }
