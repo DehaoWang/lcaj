@@ -1,4 +1,4 @@
-package types.dynamicprogramming;
+package types.dp;
 
 public class LongestIncSeq {
     public static void main(String[] args) {

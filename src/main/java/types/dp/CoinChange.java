@@ -1,4 +1,4 @@
-package types.dynamicprogramming;
+package types.dp;
 
 public class CoinChange {
     public static void main(String[] args) {

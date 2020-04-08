@@ -1,4 +1,4 @@
-package types.dynamicprogramming;
+package types.dp;
 
 public class Fibonacci {
     public static void main(String[] args) {
