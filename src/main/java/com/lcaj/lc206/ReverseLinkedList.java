@@ -15,10 +15,25 @@ public class ReverseLinkedList {
         };
         ListNode[] listNodes = ListNode.getListFrom2dArray(m);
         for (ListNode listNode : listNodes) {
-            ListNode rev = reverseList(listNode);
+//            ListNode rev = reverseList(listNode);
+            ListNode rev = reverseList2(listNode);
             ListNode.printListNode(rev);
         }
 
+    }
+
+    public static ListNode reverseList2(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = head;
+        ListNode succ;
+        while (curr != null) {
+            succ = dummy.next;
+            dummy.next = curr;
+//            curr.next = succ;
+            curr = curr.next;
+            dummy.next.next = succ;
+        }
+        return dummy.next;
     }
 
     public static ListNode reverseList(ListNode head) {

@@ -1,4 +1,4 @@
-package com.lcaj.coding;
+package dp;
 
 public class MaxSubArraySum {
     public static void main(String[] args) {

@@ -83,6 +83,33 @@ public class ArrayMethods {
         return -1;
     }
 
+    public static int binarySearchRotated(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int l = 0;
+        int r = nums.length - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            if (target == nums[m]) {
+                return m;
+            } else if (nums[l] <= nums[m]) {
+                if (target >= nums[l] && target < nums[m]) {
+                    r = m - 1;
+                } else {
+                    l = m + 1;
+                }
+            } else {
+                if (target > nums[m] && target <= nums[r]) {
+                    l = m + 1;
+                } else {
+                    r = m - 1;
+                }
+            }
+        }
+        return -1;
+    }
+
     // heap methods:
     public static void heapSort(int[] nums, boolean asc) {
         int size = nums.length;
@@ -96,7 +123,7 @@ public class ArrayMethods {
     }
 
     public static void buildHeap(int[] nums, int size, boolean isMin) {
-        if(nums == null || nums.length == 0){
+        if (nums == null || nums.length == 0) {
             return;
         }
         int i = size / 2 - 1;
@@ -132,4 +159,6 @@ public class ArrayMethods {
             }
         }
     }
+
+
 }
