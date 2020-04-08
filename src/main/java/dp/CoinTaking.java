@@ -1,6 +1,6 @@
 package dp;
 
-public class CoinTakingGame {
+public class CoinTaking {
     public static void main(String[] args) {
         int[] nums = {3, 9, 1, 2};
         System.out.println(getMaxDiff(nums));
@@ -10,8 +10,4 @@ public class CoinTakingGame {
 
         return 0;
     }
-
-//    public Class FirSec{
-//        Class FirSec()
-//    }
 }
