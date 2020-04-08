@@ -24,7 +24,7 @@ public class HouseRobber {
     }
 
     public static int rob(int[] nums) {
-        // dp-memo
+        // types.dp-memo
         int len = nums.length;
         if (len == 0) {
             return 0;
@@ -49,7 +49,7 @@ public class HouseRobber {
     }
 
     public static int rob2(int[] nums) {
-        // dp-memo
+        // types.dp-memo
         int len = nums.length;
         if (len == 0) {
             return 0;

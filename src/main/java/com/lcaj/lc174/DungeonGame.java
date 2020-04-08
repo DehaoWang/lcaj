@@ -16,7 +16,7 @@ public class DungeonGame {
     }
 
     public static int calculateMinimumHP(int[][] dungeon) {
-        // dp-memo
+        // types.dp-memo
         int m = dungeon.length;
         int n = dungeon[0].length;
         if (m <= 0 || n <= 0) {
@@ -45,7 +45,7 @@ public class DungeonGame {
         }
         MatrixMethods.printMatrix(memo);
 
-        // dp
+        // types.dp
         if (m > 1 && n > 1) {
             for (int i = m - 2; i >= 0; i--) {
                 for (int j = n - 2; j >= 0; j--) {
