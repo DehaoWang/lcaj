@@ -1,4 +1,4 @@
-package types.binsearch;
+package types.binarysearch;
 
 public class BinarySearch {
     public static void main(String[] args) {
