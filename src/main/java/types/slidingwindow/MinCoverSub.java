@@ -53,7 +53,7 @@ public class MinCoverSub {
     public static String minCoverSubSW(String s, String t) {
         int lenS = s.length();
         Map<Character, Integer> tMap = UtilsSW.getStrMap(t);
-        int min = Integer.MAX_VALUE;
+        int minLen = Integer.MAX_VALUE;
         String minSub = "";
         int l = 0;
         int r = 0;
@@ -68,8 +68,8 @@ public class MinCoverSub {
                     subMap.put(cR, subMap.getOrDefault(cR, 0) + 1);
                 }
             } else {
-                if (r - l + 1 < min) {
-                    min = Math.min(min, r - l + 1);
+                if (r - l + 1 < minLen) {
+                    minLen = Math.min(minLen, r - l + 1);
                     minSub = s.substring(l, r + 1);
                 }
                 char cL = s.charAt(l);
