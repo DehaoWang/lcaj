@@ -23,6 +23,7 @@ public class Permutations {
             return;
         }
         for (int n : nums) {
+            // apply 'contains' to prune
             if (track.contains(n)) {
                 continue;
             }

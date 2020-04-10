@@ -17,7 +17,7 @@ public class EvaluateReversePolishNotation {
         };
         for (String notation : notations) {
             System.out.println(evalRPN(notation.split("")));
-            System.out.println(evalRPNrec(notation.split("")));
+//            System.out.println(evalRPNrec(notation.split("")));
         }
 
 

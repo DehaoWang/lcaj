@@ -25,9 +25,10 @@ public class Combinations {
             return;
         }
         for (int i = start; i < nums.length; i++) {
-            if (track.contains(nums[i])) {
-                continue;
-            }
+            // apply 'start' to prune
+//            if (track.contains(nums[i])) {
+//                continue;
+//            }
             track.add(nums[i]);
             // key: use i+1 to avoid duplication
             backtrack(res, track, nums, r - 1, i + 1);
