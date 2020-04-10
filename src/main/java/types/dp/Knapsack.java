@@ -1,5 +1,7 @@
 package types.dp;
 
+import com.lcaj.util.MatrixMethods;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public class Knapsack {
                 {5, 4, 7, 2, 6},
         };
         int[][] valuesList = {
-                {2, 1, 3},
+                {4, 2, 3},
                 {12, 3, 10, 3, 6}
         };
         int[] maxWeights = {4, 15};
@@ -36,6 +38,7 @@ public class Knapsack {
                 }
             }
         }
+//        MatrixMethods.printMatrix(dp);
         return dp[n][maxWeight];
     }
 }
