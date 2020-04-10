@@ -32,14 +32,14 @@ public class MinCoverSub {
     public static String minCoverSubBF(String s, String t) {
         int lenS = s.length();
         int lenT = t.length();
-        Map<Character, Integer> tMap = getStrMap(t);
+        Map<Character, Integer> tMap = UtilsSW.getStrMap(t);
         int min = Integer.MAX_VALUE;
         String minSub = "";
         for (int i = 0; i <= lenS - lenT; i++) {
             for (int j = i + lenT; j <= lenS; j++) {
                 String sub = s.substring(i, j);
-                Map<Character, Integer> subMap = getStrMap(sub);
-                if (cover(subMap, tMap)) {
+                Map<Character, Integer> subMap = UtilsSW.getStrMap(sub);
+                if (UtilsSW.cover(subMap, tMap)) {
                     if (j - i < min) {
                         min = j - i;
                         minSub = sub;
@@ -50,29 +50,9 @@ public class MinCoverSub {
         return minSub;
     }
 
-    private static Map<Character, Integer> getStrMap(String t) {
-        Map<Character, Integer> strMap = new HashMap<>();
-        char[] ca = t.toCharArray();
-        for (char c : ca) {
-            strMap.put(c, strMap.getOrDefault(c, 0) + 1);
-        }
-        return strMap;
-    }
-
-    private static boolean cover(Map<Character, Integer> subMap, Map<Character, Integer> tMap) {
-        for (Character c : tMap.keySet()) {
-            int tc = tMap.get(c);
-            int sc = subMap.getOrDefault(c, 0);
-            if (sc < tc) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static String minCoverSubSW(String s, String t) {
         int lenS = s.length();
-        Map<Character, Integer> tMap = getStrMap(t);
+        Map<Character, Integer> tMap = UtilsSW.getStrMap(t);
         int min = Integer.MAX_VALUE;
         String minSub = "";
         int l = 0;
@@ -81,20 +61,20 @@ public class MinCoverSub {
         subMap.put(s.charAt(0), 1);
         while (r < lenS) {
             // match: l++; else: r++;
-            if (!cover(subMap, tMap)) {
+            if (!UtilsSW.cover(subMap, tMap)) {
                 r++;
                 if (r < lenS) {
-                    char cr = s.charAt(r);
-                    subMap.put(cr, subMap.getOrDefault(cr, 0) + 1);
+                    char cR = s.charAt(r);
+                    subMap.put(cR, subMap.getOrDefault(cR, 0) + 1);
                 }
             } else {
                 if (r - l + 1 < min) {
                     min = Math.min(min, r - l + 1);
                     minSub = s.substring(l, r + 1);
                 }
-                char cl = s.charAt(l);
+                char cL = s.charAt(l);
                 l++;
-                subMap.put(cl, subMap.get(cl) - 1);
+                subMap.put(cL, subMap.get(cL) - 1);
             }
         }
         return minSub;
