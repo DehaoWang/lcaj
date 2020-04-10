@@ -1,6 +1,7 @@
 package interview;
 
 import com.lcaj.model.TreeNode;
+import com.lcaj.util.TreeMethods;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,20 @@ import java.util.List;
 public class Coding {
 
     public static void main(String[] args) {
-        
+        TreeNode root = new TreeNode(0);
+        root.right = new TreeNode(1);
+        root.right.right = new TreeNode(2);
+        root.right.right.right = new TreeNode(3);
+        root.right.right.right.right = new TreeNode(4);
+        TreeMethods.inorderTraversal(root);
+        TreeMethods.preorderTraversal(root);
+
+        TreeNode balancedRoot = getBalancedBST(root);
+        TreeMethods.inorderTraversal(balancedRoot);
+        TreeMethods.preorderTraversal(balancedRoot);
     }
 
-    public TreeNode getBalancedBST(TreeNode root) {
+    public static TreeNode getBalancedBST(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -33,7 +44,7 @@ public class Coding {
         return contrustBST(nums, l, r);
     }
 
-    public TreeNode contrustBST(int[] nums, int l, int r) {
+    public static TreeNode contrustBST(int[] nums, int l, int r) {
         // base case
         if (l > r) {
             return null;
@@ -49,7 +60,7 @@ public class Coding {
         return curr;
     }
 
-    public void getSortedNumsBSTinorder(TreeNode curr, List<Integer> list) {
+    public static void getSortedNumsBSTinorder(TreeNode curr, List<Integer> list) {
         // base case
         if (curr == null) {
             return;
