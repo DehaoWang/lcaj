@@ -178,4 +178,31 @@ public class EditDistance {
         }
         return res;
     }
+
+    /////////////////
+    public static int minDistanceDPLC(String word1, String word2) {
+        int lenS = word1.length();
+        int lenT = word2.length();
+        int[][] dp = new int[lenS + 1][lenT + 1];
+        for (int i = 1; i <= lenS; i++) {
+            dp[i][0] = i;
+        }
+        for (int j = 1; j <= lenT; j++) {
+            dp[0][j] = j;
+        }
+        for (int i = 1; i <= lenS; i++) {
+            for (int j = 1; j <= lenT; j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = multiMin(
+                            1 + dp[i - 1][j - 1],   // modify
+                            1 + dp[i - 1][j],       // delete
+                            1 + dp[i][j - 1]        // insert
+                    );
+                }
+            }
+        }
+        return dp[lenS][lenT];
+    }
 }
