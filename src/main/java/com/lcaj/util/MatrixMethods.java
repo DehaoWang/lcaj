@@ -20,7 +20,7 @@ public class MatrixMethods {
         int w = matrix[0].length;
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
-                System.out.print(matrix[i][j] + " ");
+                System.out.print(String.format("%-4s", matrix[i][j]));
             }
             System.out.println();
         }
