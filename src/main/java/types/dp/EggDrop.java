@@ -5,9 +5,9 @@ import com.lcaj.util.MatrixMethods;
 public class EggDrop {
     public static void main(String[] args) {
 
-        int numOfEgg = 1;
+        int numOfEgg = 6;
 //        int level = (int) Math.pow(2, 8);
-        int level = 3;
+        int level = 1000;
 
 //        System.out.println(Math.log(level) / Math.log(2));
 
@@ -283,11 +283,12 @@ public class EggDrop {
             r *= t + 1 - k;
             r /= k;
             res += r;
-            if (res > n) {
+            // problem: go off bound, any other solutions?
+            if (res >= n) {
                 break;
             }
         }
-        return (int) res;
+        return res;
     }
 
     // method 1: get Try By Egg & Level
@@ -301,7 +302,6 @@ public class EggDrop {
 
     // method 1.F: get Try By Egg & Level Final: binary search & lower bound pruning
     public static int getTryMathBinaryByEL(int e, int level) {
-        int r = level;
         // lower bound pruning
         int unlimitedTry = (int) Math.ceil(logTwo(level + 1));
         if (e >= unlimitedTry) {
@@ -309,7 +309,7 @@ public class EggDrop {
         }
         // binary search
         int l = 1;
-
+        int r = level;
         while (l < r) {
             int m = l + (r - l) / 2;
             if (getLevelMathByETPatch(e, m, level) < level) {
@@ -334,4 +334,7 @@ public class EggDrop {
         }
         return e;
     }
+
+    // method 2.F: get Try By Egg & Level Final: binary search √ & lower bound pruning X ?
+    // TODO: 2020-04-13
 }
