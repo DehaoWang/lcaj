@@ -19,12 +19,11 @@ public class OpenLock {
         System.out.println(openLock(new String[]{"8888"}, "0009"));
         System.out.println(openLock(new String[]{"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"}, "8888"));
 
-
+        // buggy
         System.out.println(openLock2WayBFS(new String[]{"1000", "9000", "0100", "0900", "0010", "0090", "0001"}, "4872"));
         System.out.println(openLock2WayBFS(new String[]{"0201", "0101", "0102", "1212", "2002"}, "0202"));
         System.out.println(openLock2WayBFS(new String[]{"8888"}, "0009"));
         System.out.println(openLock2WayBFS(new String[]{"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"}, "8888"));
-
 
         System.out.println(openLock2WayBFS2(new String[]{"1000", "9000", "0100", "0900", "0010", "0090", "0001"}, "4872"));
         System.out.println(openLock2WayBFS2(new String[]{"0201", "0101", "0102", "1212", "2002"}, "0202"));
@@ -54,7 +53,7 @@ public class OpenLock {
         int depth = 0;
         Set<String> visited = new HashSet<>();
         Queue<String> queue = new LinkedList<>();
-        queue.add(start);
+        queue.offer(start);
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
@@ -69,7 +68,7 @@ public class OpenLock {
                 List<String> options = generate(curr);
                 for (String option : options) {
                     if (!visited.contains(option)) {
-                        queue.add(option);
+                        queue.offer(option);
                     }
                 }
             }
@@ -142,8 +141,8 @@ public class OpenLock {
         Queue<String> queueF = new LinkedList<>();
         Queue<String> queueB = new LinkedList<>();
 
-        queueF.add(source);
-        queueB.add(target);
+        queueF.offer(source);
+        queueB.offer(target);
         while (!queueF.isEmpty() && !queueB.isEmpty()) {
             int sizeF = queueF.size();
             for (int i = 0; i < sizeF; i++) {
@@ -161,7 +160,7 @@ public class OpenLock {
                 List<String> options = generate(curr);
                 for (String option : options) {
                     if (!visitedF.contains(option)) {
-                        queueF.add(option);
+                        queueF.offer(option);
                     }
                 }
             }
@@ -183,7 +182,7 @@ public class OpenLock {
                 List<String> options = generate(curr);
                 for (String option : options) {
                     if (!visitedB.contains(option)) {
-                        queueB.add(option);
+                        queueB.offer(option);
                     }
                 }
             }
@@ -211,8 +210,8 @@ public class OpenLock {
 
         visitedF.add(source);
         visitedB.add(target);
-        queueF.add(source);
-        queueB.add(target);
+        queueF.offer(source);
+        queueB.offer(target);
         while (!queueF.isEmpty() && !queueB.isEmpty()) {
             int sizeF = queueF.size();
             for (int i = 0; i < sizeF; i++) {
@@ -223,7 +222,7 @@ public class OpenLock {
                         if (visitedB.contains(option)) {
                             return depthF + depthB + 1;
                         }
-                        queueF.add(option);
+                        queueF.offer(option);
                         visitedF.add(option);
                     }
                 }
@@ -239,7 +238,7 @@ public class OpenLock {
                         if (visitedF.contains(option)) {
                             return depthF + depthB + 1;
                         }
-                        queueB.add(option);
+                        queueB.offer(option);
                         visitedB.add(option);
                     }
                 }
