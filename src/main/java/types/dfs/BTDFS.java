@@ -2,9 +2,7 @@ package types.dfs;
 
 import com.lcaj.model.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BTDFS {
     public static void main(String[] args) {
@@ -16,13 +14,14 @@ public class BTDFS {
         root6.right.left = new TreeNode(5);
         root6.right.right = new TreeNode(7);
 
-        binaryTreeDFS(root6);
+        System.out.println(binaryTreeDFS(root6));
     }
 
-    public static void binaryTreeDFS(TreeNode root) {
+    public static List<Integer> binaryTreeDFS(TreeNode root) {
+        List<Integer> res = new LinkedList<>();
         // template
         if (root == null) {
-            return;
+            return res;
         }
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
@@ -30,7 +29,12 @@ public class BTDFS {
             int size = stack.size();
             for (int i = 0; i < size; i++) {
                 TreeNode curr = stack.pop();
-                System.out.println(curr.val);
+
+                // ordinary
+//                res.add(curr.val);
+                // reversed
+                res.add(0, curr.val);
+
                 if (curr.right != null) {
                     stack.push(curr.right);
                 }
@@ -39,5 +43,6 @@ public class BTDFS {
                 }
             }
         }
+        return res;
     }
 }
