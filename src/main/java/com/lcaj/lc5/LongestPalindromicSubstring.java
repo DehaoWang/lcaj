@@ -13,11 +13,12 @@ public class LongestPalindromicSubstring {
 
     public static int low;
     public static int maxLen;
+
     /**
      * test cases
      */
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         compare("cbbd");
         compare("a");
@@ -25,7 +26,7 @@ public class LongestPalindromicSubstring {
         compare("aaaaaaaaaaaaaaaaaaaaaaaaa");
     }
 
-    public static void compare(String s){
+    public static void compare(String s) {
         System.out.println(longestPalindrome(s));
         System.out.println(longestPalindromeGS(s));
     }
@@ -36,15 +37,15 @@ public class LongestPalindromicSubstring {
 
     // submitted
     public static String longestPalindrome(String s) {
-        if(s.length() == 1){
+        if (s.length() == 1) {
             return s;
         }
         // make char 2 index,
         Map<Character, Set<Integer>> char2Index = new HashMap<>();
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             Set<Integer> indexSet = char2Index.get(c);
-            if(indexSet == null){
+            if (indexSet == null) {
                 indexSet = new HashSet<>();
                 char2Index.put(c, indexSet);
             }
@@ -52,18 +53,18 @@ public class LongestPalindromicSubstring {
         }
 
         int max = 0;
-        String lps = ""+s.charAt(0);
+        String lps = "" + s.charAt(0);
 //        System.out.println(char2Index);
-        for(Character c: char2Index.keySet()){
+        for (Character c : char2Index.keySet()) {
             Set<Integer> indexSet = char2Index.get(c);
-            if(indexSet.size() > 1){
-                for(int x: indexSet){
-                    for(int y: indexSet){
-                        if(x < y){
-                            String testS = s.substring(x, y+1);
+            if (indexSet.size() > 1) {
+                for (int x : indexSet) {
+                    for (int y : indexSet) {
+                        if (x < y) {
+                            String testS = s.substring(x, y + 1);
 //                            System.out.println("x="+x+",y="+y+",testS="+testS);
-                            if(isPalindrome(testS)){
-                                if(testS.length() > max){
+                            if (isPalindrome(testS)) {
+                                if (testS.length() > max) {
                                     max = testS.length();
                                     lps = testS;
                                 }
@@ -77,12 +78,13 @@ public class LongestPalindromicSubstring {
     }
 
     private static boolean isPalindrome(String testS) {
-        int i = 0, j = testS.length()-1;
-        while(i < j){
-            if(testS.charAt(i) != testS.charAt(j)){
+        int i = 0, j = testS.length() - 1;
+        while (i < j) {
+            if (testS.charAt(i) != testS.charAt(j)) {
                 return false;
             }
-            i++;j--;
+            i++;
+            j--;
         }
         return true;
     }
@@ -92,25 +94,25 @@ public class LongestPalindromicSubstring {
         low = 0;
         maxLen = 0;
 
-        if(s.length() < 2){
+        if (s.length() < 2) {
             return s;
         }
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             extandPalindrome(s, i, i);
-            extandPalindrome(s, i, i+1);
+            extandPalindrome(s, i, i + 1);
         }
 
-        return s.substring(low, low+maxLen);
+        return s.substring(low, low + maxLen);
     }
 
     private static void extandPalindrome(String s, int m, int n) {
-        while(m >= 0 && n < s.length() && s.charAt(m) == s.charAt(n)){
+        while (m >= 0 && n < s.length() && s.charAt(m) == s.charAt(n)) {
             m--;
             n++;
         }
-        if(n-1-m > maxLen){
-            maxLen = n-1-m;
-            low = m+1;
+        if (n - 1 - m > maxLen) {
+            maxLen = n - 1 - m;
+            low = m + 1;
         }
     }
 
