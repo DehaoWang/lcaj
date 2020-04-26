@@ -1,6 +1,6 @@
 package com.lcaj.lc108;
 
-import datastructures.basics.TreeNode;
+import datastructures.basics.tree.TreeNode;
 import algorithms.util.TreeMethods;
 
 /**

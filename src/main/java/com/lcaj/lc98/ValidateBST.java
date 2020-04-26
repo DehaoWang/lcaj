@@ -1,6 +1,6 @@
 package com.lcaj.lc98;
 
-import datastructures.basics.TreeNode;
+import datastructures.basics.tree.TreeNode;
 
 /**
  * Created by wangdehao on 18/11/27.

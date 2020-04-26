@@ -4,10 +4,14 @@ package com.lcaj;
 //import junit.framework.TestCase;
 //import junit.framework.TestSuite;
 
+import datastructures.basics.linkedlist.DLLNode;
+import datastructures.basics.linkedlist.DoublyLinkedList;
+import datastructures.basics.linkedlist.LinkedList;
+
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest
 //    extends TestCase
 {
     /**
@@ -35,4 +39,15 @@ public class AppTest
 //    {
 //        assertTrue( true );
 //    }
+    public static void main(String[] args) {
+//        DLLNode dll = DLLNode.getListFromArray(new int[]{1, 2, 3, 4, 5});
+//        DLLNode.printListNode(dll);
+//        DLLNode.printListNodeRev(dll);
+
+        LinkedList ll = new LinkedList(new int[]{1, 2, 3, 4, 5});
+        ll.print();
+
+        DoublyLinkedList dll = new DoublyLinkedList(new int[]{1, 2, 3, 4, 5, 6});
+        dll.print();
+    }
 }

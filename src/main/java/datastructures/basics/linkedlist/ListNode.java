@@ -1,4 +1,4 @@
-package datastructures.basics;
+package datastructures.basics.linkedlist;
 
 /**
  * Created by wangdehao on 18/4/12.
@@ -13,7 +13,7 @@ public class ListNode {
     }
 
     public static ListNode getListFromArray(int[] a) {
-        if (a.length <= 0) {
+        if (a == null || a.length == 0) {
             return null;
         }
         ListNode first = new ListNode(a[0]);
@@ -30,11 +30,11 @@ public class ListNode {
         System.out.println("Printing Node List");
         while (curr != null) {
             System.out.print(curr.val + " -> ");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             curr = curr.next;
         }
         System.out.println();

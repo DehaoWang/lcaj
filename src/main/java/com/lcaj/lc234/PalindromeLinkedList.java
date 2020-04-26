@@ -1,6 +1,6 @@
 package com.lcaj.lc234;
 
-import datastructures.basics.ListNode;
+import datastructures.basics.linkedlist.ListNode;
 
 /**
  * Created by wangdehao on 19/4/18.

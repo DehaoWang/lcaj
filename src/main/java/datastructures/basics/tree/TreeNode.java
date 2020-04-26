@@ -1,4 +1,4 @@
-package datastructures.basics;
+package datastructures.basics.tree;
 
 /**
  * Created by wangdehao on 18/11/26.

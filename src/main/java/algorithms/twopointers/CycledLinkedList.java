@@ -1,6 +1,6 @@
 package algorithms.twopointers;
 
-import datastructures.basics.ListNode;
+import datastructures.basics.linkedlist.ListNode;
 
 public class CycledLinkedList {
     public static void main(String[] args) {

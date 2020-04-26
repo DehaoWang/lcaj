@@ -1,6 +1,6 @@
 package algorithms.bfs;
 
-import datastructures.basics.TreeNode;
+import datastructures.basics.tree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

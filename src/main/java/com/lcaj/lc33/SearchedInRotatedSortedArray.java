@@ -1,21 +1,23 @@
 package com.lcaj.lc33;
 
+import algorithms.binarysearch.BinarySearch;
 import algorithms.util.ArrayMethods;
 
 /**
  * Created by wangdehao on 18/10/28.
  */
 public class SearchedInRotatedSortedArray {
-    // TODO: 18/11/3  
     public static void main(String[] args) {
         int[] nums = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] nums2 = {0, 0, 1, 0, 0, 0};
         int target = 5;
-        int target2 = 2;
+        int target2 = 1;
 
 //        System.out.println(binarySearch(nums, target));
 //        System.out.println(ArrayMethods.binarySearch(nums, target));
         System.out.println(ArrayMethods.binarySearchRotated(nums2, target2));
+        System.out.println(binarySearchRotated(nums2, target2));
+
     }
 
     public static int binarySearch(int[] nums, int target) {
@@ -52,6 +54,10 @@ public class SearchedInRotatedSortedArray {
             return binarySearchRotatedRecursive(nums, p + 1, r, target);
         }
         return -1;
+    }
+
+    public static int binarySearchRotated(int[] nums, int target){
+        return BinarySearch.binarySearchRotated(nums, target);
     }
 
 

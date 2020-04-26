@@ -1,6 +1,6 @@
 package algorithms.dp;
 
-import datastructures.basics.TreeNode;
+import datastructures.basics.tree.TreeNode;
 
 public class HouseRobber {
     public static void main(String[] args) {

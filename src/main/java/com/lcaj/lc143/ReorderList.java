@@ -1,6 +1,6 @@
 package com.lcaj.lc143;
 
-import datastructures.basics.ListNode;
+import datastructures.basics.linkedlist.ListNode;
 
 public class ReorderList {
     public static void main(String[] args) {

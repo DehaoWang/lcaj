@@ -1,6 +1,6 @@
 package com.lcaj.lc92;
 
-import datastructures.basics.ListNode;
+import datastructures.basics.linkedlist.ListNode;
 
 /**
  * Created by wangdehao on 18/11/26.

@@ -1,6 +1,6 @@
 package basics;
 
-import datastructures.basics.ListNode;
+import datastructures.basics.linkedlist.ListNode;
 
 public class LinkedList {
     public static void main(String[] args) {

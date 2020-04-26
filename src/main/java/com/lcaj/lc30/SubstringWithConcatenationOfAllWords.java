@@ -6,7 +6,6 @@ import java.util.*;
  * Created by wangdehao on 18/5/4.
  */
 public class SubstringWithConcatenationOfAllWords {
-    // TODO: 18/11/3  
     public static void main( String[] args ) {
         Map<String, String[]> samples = new HashMap<>();
         samples.put("barfoothefoobarman", new String[]{"foo", "bar"});

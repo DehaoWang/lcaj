@@ -1,6 +1,6 @@
 package algorithms.dfs;
 
-import datastructures.basics.TreeNode;
+import datastructures.basics.tree.TreeNode;
 
 import java.util.*;
 
