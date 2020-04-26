@@ -1,9 +1,5 @@
 package com.lcaj.lc209;
 
-import com.lcaj.util.ArrayMethods;
-
-import java.util.Arrays;
-
 /**
  * Created by wangdehao on 19/4/16.
  */

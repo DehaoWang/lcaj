@@ -1,6 +1,6 @@
 package com.lcaj.lc88;
 
-import com.lcaj.util.ArrayMethods;
+import algorithms.util.ArrayMethods;
 
 /**
  * Created by wangdehao on 18/11/22.

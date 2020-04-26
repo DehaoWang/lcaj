@@ -1,10 +1,5 @@
 package com.lcaj.lc150;
 
-import com.lcaj.util.ArrayMethods;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Stack;
 
 public class EvaluateReversePolishNotation {

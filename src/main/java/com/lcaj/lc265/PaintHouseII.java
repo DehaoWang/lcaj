@@ -1,7 +1,6 @@
 package com.lcaj.lc265;
 
 import com.lcaj.lc256.PaintHouse;
-import com.lcaj.util.MatrixMethods;
 
 /**
  * Created by wangdehao on 19/5/14.

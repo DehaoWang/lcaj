@@ -1,6 +1,6 @@
 package com.lcaj.lc41;
 
-import com.lcaj.util.ArrayMethods;
+import algorithms.util.ArrayMethods;
 
 import java.util.*;
 

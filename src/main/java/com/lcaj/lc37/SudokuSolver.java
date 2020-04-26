@@ -1,10 +1,6 @@
 package com.lcaj.lc37;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.lcaj.lc36.ValidSudoku.isValidSudoku;
-import static com.lcaj.util.MatrixMethods.printMatrix;
+import static algorithms.util.MatrixMethods.printMatrix;
 
 /**
  * Created by wangdehao on 18/10/28.

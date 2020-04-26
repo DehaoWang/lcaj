@@ -1,6 +1,6 @@
 package com.lcaj.lc118;
 
-import com.lcaj.util.MatrixMethods;
+import algorithms.util.MatrixMethods;
 
 import java.util.ArrayList;
 import java.util.List;

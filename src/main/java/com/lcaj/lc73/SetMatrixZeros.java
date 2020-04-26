@@ -3,7 +3,7 @@ package com.lcaj.lc73;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.lcaj.util.MatrixMethods.printMatrix;
+import static algorithms.util.MatrixMethods.printMatrix;
 
 /**
  * Created by wangdehao on 18/11/14.

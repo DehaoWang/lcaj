@@ -1,6 +1,6 @@
 package com.lcaj.lc75;
 
-import static com.lcaj.util.ArrayMethods.*;
+import static algorithms.util.ArrayMethods.*;
 
 /**
  * Created by wangdehao on 18/11/15.

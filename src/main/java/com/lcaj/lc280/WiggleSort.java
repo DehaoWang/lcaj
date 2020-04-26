@@ -1,6 +1,6 @@
 package com.lcaj.lc280;
 
-import com.lcaj.util.ArrayMethods;
+import algorithms.util.ArrayMethods;
 
 /**
  * Created by wangdehao on 19/5/28.

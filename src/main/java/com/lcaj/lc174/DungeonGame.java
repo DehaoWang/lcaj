@@ -1,6 +1,6 @@
 package com.lcaj.lc174;
 
-import com.lcaj.util.MatrixMethods;
+import algorithms.util.MatrixMethods;
 
 /**
  * Created by wangdehao on 19/4/11.

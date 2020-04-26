@@ -1,7 +1,7 @@
 package com.lcaj.lc105;
 
 import datastructures.basics.TreeNode;
-import com.lcaj.util.TreeMethods;
+import algorithms.util.TreeMethods;
 
 /**
  * Created by wangdehao on 18/11/30.

@@ -1,8 +1,6 @@
 package com.lcaj.lc33;
 
-import com.lcaj.util.ArrayMethods;
-
-import java.lang.reflect.Array;
+import algorithms.util.ArrayMethods;
 
 /**
  * Created by wangdehao on 18/10/28.

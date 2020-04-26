@@ -1,9 +1,9 @@
 package com.lcaj;
 
 import datastructures.basics.graph.Graph;
-import com.lcaj.util.ArrayMethods;
-import com.lcaj.util.GraphMethods;
-import com.lcaj.util.StringMethods;
+import algorithms.util.ArrayMethods;
+import algorithms.util.GraphMethods;
+import algorithms.util.StringMethods;
 
 import java.io.IOException;
 import java.util.*;

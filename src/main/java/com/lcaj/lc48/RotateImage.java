@@ -1,10 +1,6 @@
 package com.lcaj.lc48;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Stack;
-
-import static com.lcaj.util.MatrixMethods.printMatrix;
+import static algorithms.util.MatrixMethods.printMatrix;
 
 /**
  * Created by wangdehao on 18/11/4.

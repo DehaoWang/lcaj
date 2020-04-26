@@ -1,11 +1,7 @@
 package com.lcaj.lc703;
 
-import com.lcaj.util.ArrayMethods;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
