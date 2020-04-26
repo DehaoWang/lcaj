@@ -32,7 +32,7 @@ public class App {
 
 //        Graph graph = new Graph(vertices, edges, true, false);
         Graph graph = new Graph(verticesStr, edgesStr, true, false);
-        
+
         GraphMethods.dfsTraversalRecursive(graph, 0, true);
         GraphMethods.dfsTraversalIterativeLabelWhenPush(graph, 0, false);
         GraphMethods.dfsTraversalIterativeLabelWhenPop(graph, 0, false);
