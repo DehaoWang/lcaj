@@ -1,6 +1,6 @@
 package types.recursion;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 public class PathSumIII {

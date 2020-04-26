@@ -1,6 +1,6 @@
 package com.lcaj;
 
-import com.lcaj.model.graph.Graph;
+import datastructures.basics.graph.Graph;
 import com.lcaj.util.ArrayMethods;
 import com.lcaj.util.GraphMethods;
 import com.lcaj.util.StringMethods;

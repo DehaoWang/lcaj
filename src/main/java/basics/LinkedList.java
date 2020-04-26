@@ -1,6 +1,6 @@
 package basics;
 
-import com.lcaj.model.ListNode;
+import datastructures.basics.ListNode;
 
 public class LinkedList {
     public static void main(String[] args) {

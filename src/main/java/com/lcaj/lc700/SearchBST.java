@@ -1,6 +1,6 @@
 package com.lcaj.lc700;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 
 public class SearchBST {
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package types.dp;
 
+import datastructures.basics.TreeNode;
+
 public class HouseRobber {
     public static void main(String[] args) {
         // p1
@@ -9,6 +11,14 @@ public class HouseRobber {
 
         // p2
         System.out.println(rob2(new int[]{1, 2, 3, 1}));
+        // p3
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(5);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.right = new TreeNode(1);
+        System.out.println(rob3(root));
     }
 
     // PROBLEM 1: Simple Array
@@ -65,5 +75,23 @@ public class HouseRobber {
     }
 
     // PROBLEM 3: Binary Tree
+    public static int rob3(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int[] res = rob_or_not(root);
+        return Math.max(res[0], res[1]);
+    }
 
+    // 0 not rob, 1 rob
+    private static int[] rob_or_not(TreeNode curr) {
+        if (curr == null) {
+            return new int[]{0, 0};
+        }
+        int[] left = rob_or_not(curr.left);
+        int[] right = rob_or_not(curr.right);
+        int rob = curr.val + left[0] + right[0];
+        int not_rob = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        return new int[]{not_rob, rob};
+    }
 }

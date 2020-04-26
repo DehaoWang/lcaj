@@ -1,8 +1,6 @@
 package com.lcaj.lc82;
 
-import com.lcaj.model.ListNode;
-
-import java.util.List;
+import datastructures.basics.ListNode;
 
 /**
  * Created by wangdehao on 18/11/22.

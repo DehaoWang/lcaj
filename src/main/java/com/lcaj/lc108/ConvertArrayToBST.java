@@ -1,8 +1,7 @@
 package com.lcaj.lc108;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
-import com.sun.source.tree.Tree;
 
 /**
  * Created by wangdehao on 18/12/3.

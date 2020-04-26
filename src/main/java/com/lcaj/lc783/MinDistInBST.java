@@ -1,6 +1,6 @@
 package com.lcaj.lc783;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 
 public class MinDistInBST {
     public static void main(String[] args) {

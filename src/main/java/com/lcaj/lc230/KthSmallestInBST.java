@@ -1,7 +1,6 @@
 package com.lcaj.lc230;
 
-import com.lcaj.model.TreeNode;
-import com.lcaj.util.TreeMethods;
+import datastructures.basics.TreeNode;
 
 /**
  * Created by wangdehao on 19/4/17.

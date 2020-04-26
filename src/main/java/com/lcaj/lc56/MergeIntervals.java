@@ -1,6 +1,6 @@
 package com.lcaj.lc56;
 
-import com.lcaj.model.Interval;
+import datastructures.basics.Interval;
 
 import java.util.*;
 

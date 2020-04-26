@@ -1,6 +1,6 @@
 package com.lcaj.lc206;
 
-import com.lcaj.model.ListNode;
+import datastructures.basics.ListNode;
 
 /**
  * Created by wangdehao on 19/4/16.

@@ -1,4 +1,4 @@
-package com.lcaj.model.graph;
+package datastructures.basics.graph;
 
 import java.util.*;
 

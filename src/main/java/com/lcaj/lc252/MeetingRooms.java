@@ -1,11 +1,7 @@
 package com.lcaj.lc252;
 
-import com.lcaj.model.Interval;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * Created by wangdehao on 19/5/13.

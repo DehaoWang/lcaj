@@ -1,6 +1,6 @@
 package com.lcaj.util;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

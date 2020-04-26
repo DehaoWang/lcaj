@@ -1,6 +1,6 @@
 package com.lcaj.lc104;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 
 /**
  * Created by wangdehao on 18/11/29.

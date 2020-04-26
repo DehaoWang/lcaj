@@ -1,7 +1,6 @@
 package com.lcaj.lc270;
 
-import com.lcaj.model.TreeNode;
-import com.lcaj.util.MatrixMethods;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 /**

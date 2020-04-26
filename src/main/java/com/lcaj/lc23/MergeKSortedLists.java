@@ -1,9 +1,7 @@
 package com.lcaj.lc23;
 
 import com.lcaj.lc21.MergeTwoSortedList;
-import com.lcaj.model.ListNode;
-
-import java.util.Arrays;
+import datastructures.basics.ListNode;
 
 /**
  * Created by wangdehao on 18/5/2.

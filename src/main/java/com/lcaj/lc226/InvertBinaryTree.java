@@ -1,7 +1,6 @@
 package com.lcaj.lc226;
 
-import com.lcaj.lc102.BTLevelOrderTraversal;
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 /**

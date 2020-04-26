@@ -1,6 +1,6 @@
 package types.twopointers;
 
-import com.lcaj.model.ListNode;
+import datastructures.basics.ListNode;
 
 public class CycledLinkedList {
     public static void main(String[] args) {

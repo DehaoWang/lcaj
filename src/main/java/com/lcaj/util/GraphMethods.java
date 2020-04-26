@@ -1,9 +1,8 @@
 package com.lcaj.util;
 
-import com.lcaj.model.graph.Graph;
+import datastructures.basics.graph.Graph;
 
 import java.util.*;
-import java.util.function.DoubleUnaryOperator;
 
 public class GraphMethods {
     public static void dfsTraversalRecursive(Graph graph, int startIndex, boolean visitPreference) {

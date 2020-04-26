@@ -1,6 +1,6 @@
 package com.lcaj.lc142;
 
-import com.lcaj.model.ListNode;
+import datastructures.basics.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

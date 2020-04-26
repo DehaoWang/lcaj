@@ -1,7 +1,5 @@
 package com.lcaj.lc244;
 
-import com.lcaj.model.ListNode;
-
 import java.util.*;
 
 /**

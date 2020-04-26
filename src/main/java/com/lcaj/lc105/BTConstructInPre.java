@@ -1,6 +1,6 @@
 package com.lcaj.lc105;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 /**

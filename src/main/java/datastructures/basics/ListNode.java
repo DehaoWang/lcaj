@@ -1,4 +1,4 @@
-package com.lcaj.model;
+package datastructures.basics;
 
 /**
  * Created by wangdehao on 18/4/12.

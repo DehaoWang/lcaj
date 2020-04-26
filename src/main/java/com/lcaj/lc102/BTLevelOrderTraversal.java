@@ -1,6 +1,6 @@
 package com.lcaj.lc102;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 import java.util.*;

@@ -1,8 +1,6 @@
 package com.lcaj.lc716;
 
 
-import com.lcaj.model.ListNode;
-
 import java.util.Stack;
 
 public class MaxStack {

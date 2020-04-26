@@ -1,7 +1,7 @@
 package com.lcaj.lc95;
 
 import com.lcaj.lc94.BTInOrderTraversal;
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 import java.util.ArrayList;

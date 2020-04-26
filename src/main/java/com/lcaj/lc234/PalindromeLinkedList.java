@@ -1,8 +1,6 @@
 package com.lcaj.lc234;
 
-import com.lcaj.model.ListNode;
-
-import java.util.Stack;
+import datastructures.basics.ListNode;
 
 /**
  * Created by wangdehao on 19/4/18.

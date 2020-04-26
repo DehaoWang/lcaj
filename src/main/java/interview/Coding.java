@@ -1,6 +1,6 @@
 package interview;
 
-import com.lcaj.model.TreeNode;
+import datastructures.basics.TreeNode;
 import com.lcaj.util.TreeMethods;
 
 import java.util.ArrayList;

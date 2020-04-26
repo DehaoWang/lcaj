@@ -1,7 +1,5 @@
 package com.lcaj.lc155;
 
-import com.lcaj.model.ListNode;
-
 import java.util.Stack;
 
 /**
