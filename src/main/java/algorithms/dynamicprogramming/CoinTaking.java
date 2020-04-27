@@ -1,4 +1,4 @@
-package algorithms.dp;
+package algorithms.dynamicprogramming;
 
 public class CoinTaking {
     public static void main(String[] args) {

@@ -21,6 +21,10 @@ public class DoublyLinkedList {
         tail = curr;
     }
 
+    public DoublyLinkedList() {
+
+    }
+
     public static void print() {
         DLLNode.printListNode(head);
         DLLNode.printListNodeRev(tail);

@@ -15,6 +15,10 @@ public class BTDFS {
         root6.right.right = new TreeNode(7);
 
         System.out.println(binaryTreeDFS(root6));
+
+        List<Integer> res = new ArrayList<>();
+        binaryTreeRecDFS(root6, res);
+        System.out.println(res);
     }
 
     public static List<Integer> binaryTreeDFS(TreeNode root) {
@@ -31,9 +35,9 @@ public class BTDFS {
                 TreeNode curr = stack.pop();
 
                 // ordinary
-//                res.add(curr.val);
+                res.add(curr.val);
                 // reversed
-                res.add(0, curr.val);
+//                res.add(0, curr.val);
 
                 if (curr.right != null) {
                     stack.push(curr.right);
@@ -44,5 +48,14 @@ public class BTDFS {
             }
         }
         return res;
+    }
+
+    public static void binaryTreeRecDFS(TreeNode curr, List<Integer> res) {
+        if(curr == null){
+            return;
+        }
+        res.add(curr.val);
+        binaryTreeRecDFS(curr.left, res);
+        binaryTreeRecDFS(curr.right, res);
     }
 }

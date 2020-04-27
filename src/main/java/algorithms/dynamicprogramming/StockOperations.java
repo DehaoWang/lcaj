@@ -1,4 +1,4 @@
-package algorithms.dp;
+package algorithms.dynamicprogramming;
 
 import java.util.PriorityQueue;
 
