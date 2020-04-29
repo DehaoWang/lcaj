@@ -1,9 +1,14 @@
 package datastructures.basics.linkedlist;
 
 
+import datastructures.basics.tree.TreeDllNode;
+
 public class DoublyLinkedList {
     public static DLLNode head;
     public static DLLNode tail;
+
+    public static TreeDllNode tdHead;
+    public static TreeDllNode tdTail;
 
     public DoublyLinkedList(int[] a) {
         if (a == null || a.length == 0) {
@@ -25,8 +30,17 @@ public class DoublyLinkedList {
 
     }
 
+    public DoublyLinkedList(TreeDllNode head) {
+        this.tdHead = head;
+    }
+
     public static void print() {
         DLLNode.printListNode(head);
         DLLNode.printListNodeRev(tail);
+    }
+
+    public static void printTD() {
+        TreeDllNode.printListNode(tdHead);
+        TreeDllNode.printListNodeRev(tdTail);
     }
 }

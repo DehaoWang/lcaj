@@ -19,8 +19,8 @@ public class BTLevelOrderTraversal {
         root3.left.left = new TreeNode(2);
         root3.left.right = new TreeNode(1);
         System.out.println(levelOrder(root3));
-        TreeMethods.traversalBFS(root3);
-        TreeMethods.traversalDFS(root3);
+        TreeMethods.bfsTraversal(root3);
+        TreeMethods.dfsTraversal(root3);
     }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {

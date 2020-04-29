@@ -4,9 +4,8 @@ package com.lcaj;
 //import junit.framework.TestCase;
 //import junit.framework.TestSuite;
 
-import datastructures.basics.linkedlist.DLLNode;
-import datastructures.basics.linkedlist.DoublyLinkedList;
-import datastructures.basics.linkedlist.LinkedList;
+import algorithms.util.TreeMethods;
+import datastructures.basics.tree.TreeNode;
 
 /**
  * Unit test for simple App.
@@ -44,10 +43,27 @@ public class AppTest
 //        DLLNode.printListNode(dll);
 //        DLLNode.printListNodeRev(dll);
 
-        LinkedList ll = new LinkedList(new int[]{1, 2, 3, 4, 5});
-        ll.print();
+//        LinkedList ll = new LinkedList(new int[]{1, 2, 3, 4, 5});
+//        ll.print();
+//
+//        DoublyLinkedList dll = new DoublyLinkedList(new int[]{1, 2, 3, 4, 5, 6});
+//        dll.print();
 
-        DoublyLinkedList dll = new DoublyLinkedList(new int[]{1, 2, 3, 4, 5, 6});
-        dll.print();
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+        TreeMethods.inorderTraversal(root);
+        TreeMethods.preorderTraversal(root);
+        TreeMethods.postorderTraversal(root);
+        TreeMethods.dfsTraversal(root);
+        TreeMethods.bfsTraversal(root);
+
+        TreeMethods.morrisPreOrderTraversal(root);
+        TreeMethods.morrisInOrderTraversal(root);
+
     }
 }
