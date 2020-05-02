@@ -1,5 +1,7 @@
 package com.lcaj.lc53;
 
+import algorithms.dynamicprogramming.MaxSubArraySum;
+
 /**
  * Created by wangdehao on 18/11/5.
  */
@@ -8,7 +10,8 @@ public class MaximumSubarray {
         int[] nums = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
         int[] nums2 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 //        System.out.println(maxSubArray(nums));
-        System.out.println(maxSubArray(nums2));
+//        System.out.println(maxSubArray(nums2));
+        System.out.println(MaxSubArraySum.maxSubArraySumDP(nums2));
 
 //        System.out.println(getMaxCross(nums, 5));
     }
@@ -94,4 +97,6 @@ public class MaximumSubarray {
             }
         }
     }
+
+
 }
