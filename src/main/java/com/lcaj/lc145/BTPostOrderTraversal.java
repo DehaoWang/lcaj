@@ -2,7 +2,7 @@ package com.lcaj.lc145;
 
 import com.lcaj.lc94.BTInOrderTraversal;
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class BTPostOrderTraversal {
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
         root.right.right = new TreeNode(7);
-        TreeMethods.postorderTraversal(root);
+        TreeUtils.postorderTraversal(root);
         List<Integer> result = BTInOrderTraversal.postorderTraversal(root);
 //        List<Integer> result = preorderTraversalIterative(root);
         System.out.println(result);

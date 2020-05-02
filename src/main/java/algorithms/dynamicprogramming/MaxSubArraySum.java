@@ -1,9 +1,5 @@
 package algorithms.dynamicprogramming;
 
-import algorithms.util.ArrayMethods;
-
-import java.lang.reflect.Array;
-
 public class MaxSubArraySum {
     public static void main(String[] args) {
         int[] nums = {2, 3, 4, -6, 5, -12, 3, -5, 8};

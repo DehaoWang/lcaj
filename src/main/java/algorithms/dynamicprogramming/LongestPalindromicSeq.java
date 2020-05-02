@@ -1,6 +1,6 @@
 package algorithms.dynamicprogramming;
 
-import algorithms.util.MatrixMethods;
+import algorithms.utils.MatrixUtils;
 
 public class LongestPalindromicSeq {
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class LongestPalindromicSeq {
                 }
             }
         }
-        MatrixMethods.printMatrix(dp);
+        MatrixUtils.printMatrix(dp);
         return dp[0][len - 1];
     }
 
@@ -60,7 +60,7 @@ public class LongestPalindromicSeq {
                 }
             }
         }
-        MatrixMethods.printMatrix(dp);
+        MatrixUtils.printMatrix(dp);
         return dp[0][len - 1];
     }
 }

@@ -1,4 +1,4 @@
-package algorithms.util;
+package algorithms.utils;
 
 import datastructures.basics.tree.TreeNode;
 
@@ -9,7 +9,7 @@ import java.util.Stack;
 /**
  * Created by wangdehao on 18/11/27.
  */
-public class TreeMethods {
+public class TreeUtils {
 
     public static final String DELIMETER = " ";
     private static final String NULL_NODE = "x";

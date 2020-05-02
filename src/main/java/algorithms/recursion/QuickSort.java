@@ -1,6 +1,6 @@
 package algorithms.recursion;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 import java.util.Arrays;
 
@@ -12,9 +12,9 @@ public class QuickSort {
 //        int[] nums = {4, 4, 4, 4, 4, 4, 4};
 
 
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
         quickSort(nums, 0, nums.length - 1);
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
 
         Arrays.sort(nums);
     }
@@ -46,19 +46,19 @@ public class QuickSort {
             }
 //            System.out.println("l=" + l + ", r=" + r);
             if (l < r) {
-                ArrayMethods.swap(nums, l, r);
+                ArrayUtils.swap(nums, l, r);
             }
 //            ArrayMethods.printArray(nums);
         }
         // important: use swap instead of assignment
-        ArrayMethods.swap(nums, left, l);
+        ArrayUtils.swap(nums, left, l);
         return l;
     }
 
 
     public static int partitionR(int[] nums, int left, int right) {
 //        System.out.println("left=" + left + ", right=" + right);
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
         int l = left;
         int r = right;
         int pivot = nums[right];
@@ -72,11 +72,11 @@ public class QuickSort {
             }
 //            System.out.println("l=" + l + ", r=" + r);
             if (l < r) {
-                ArrayMethods.swap(nums, l, r);
+                ArrayUtils.swap(nums, l, r);
             }
         }
         // important: use swap instead of assignment
-        ArrayMethods.swap(nums, right, r);
+        ArrayUtils.swap(nums, right, r);
         return l;
     }
 
@@ -98,14 +98,14 @@ public class QuickSort {
             }
 //            System.out.println("l=" + l + ", r=" + r);
             if (l <= r) {
-                ArrayMethods.swap(nums, l, r);
+                ArrayUtils.swap(nums, l, r);
                 l++;
                 r--;
             }
 //            ArrayMethods.printArray(nums);
         }
         // important: use swap instead of assignment
-        ArrayMethods.swap(nums, left, l);
+        ArrayUtils.swap(nums, left, l);
         return l;
     }
 }

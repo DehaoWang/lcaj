@@ -4,7 +4,7 @@ package com.lcaj;
 //import junit.framework.TestCase;
 //import junit.framework.TestSuite;
 
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 import datastructures.basics.tree.TreeNode;
 
 /**
@@ -56,14 +56,14 @@ public class AppTest
         root.left.right = new TreeNode(3);
         root.right.left = new TreeNode(5);
         root.right.right = new TreeNode(7);
-        TreeMethods.inorderTraversal(root);
-        TreeMethods.preorderTraversal(root);
-        TreeMethods.postorderTraversal(root);
-        TreeMethods.dfsTraversal(root);
-        TreeMethods.bfsTraversal(root);
+        TreeUtils.inorderTraversal(root);
+        TreeUtils.preorderTraversal(root);
+        TreeUtils.postorderTraversal(root);
+        TreeUtils.dfsTraversal(root);
+        TreeUtils.bfsTraversal(root);
 
-        TreeMethods.morrisPreOrderTraversal(root);
-        TreeMethods.morrisInOrderTraversal(root);
+        TreeUtils.morrisPreOrderTraversal(root);
+        TreeUtils.morrisInOrderTraversal(root);
 
     }
 }

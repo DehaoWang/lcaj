@@ -1,7 +1,7 @@
 package com.lcaj.lc226;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 /**
  * Created by wangdehao on 19/4/17.
@@ -16,10 +16,10 @@ public class InvertBinaryTree {
         root3.right.right = new TreeNode(7);
         root3.left.left = new TreeNode(2);
         root3.left.right = new TreeNode(1);
-        TreeMethods.inorderTraversal(root3);
+        TreeUtils.inorderTraversal(root3);
 
         TreeNode root4 = invertTree(root3);
-        TreeMethods.inorderTraversal(root4);
+        TreeUtils.inorderTraversal(root4);
     }
 
     public static TreeNode invertTree(TreeNode root) {

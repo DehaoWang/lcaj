@@ -1,6 +1,6 @@
 package com.lcaj.lc41;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 import java.util.*;
 
@@ -98,7 +98,7 @@ public class FirstMissingPositive {
         if (!hasOne) {
             return 1;
         }
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
         for (int i = 0; i < n; i++) {
             int v = Math.abs(nums[i]);
             if (v == n) {
@@ -107,7 +107,7 @@ public class FirstMissingPositive {
                 nums[v] = -Math.abs(nums[v]);
             }
         }
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
         for (int i = 1; i < n; i++) {
             if (nums[i] > 0) {
                 return i;

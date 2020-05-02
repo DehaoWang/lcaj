@@ -1,10 +1,10 @@
-package algorithms.util;
+package algorithms.utils;
 
 import datastructures.basics.graph.Graph;
 
 import java.util.*;
 
-public class GraphMethods {
+public class GraphUtils {
     public static void dfsTraversalRecursive(Graph graph, int startIndex, boolean visitPreference) {
         System.out.println("\ndfsTraversalRecursive starting at index: " + graph.getName(startIndex));
         List<Integer> visitSequence = graph.getVisitSequence(visitPreference);

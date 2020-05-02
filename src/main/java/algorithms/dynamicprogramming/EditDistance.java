@@ -1,6 +1,6 @@
 package algorithms.dynamicprogramming;
 
-import algorithms.util.MatrixMethods;
+import algorithms.utils.MatrixUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ public class EditDistance {
                 }
             }
         }
-        MatrixMethods.printMatrix(dp);
+        MatrixUtils.printMatrix(dp);
         return dp[lenS][lenT];
     }
 

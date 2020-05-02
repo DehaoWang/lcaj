@@ -1,6 +1,6 @@
 package com.lcaj.lc119;
 
-import algorithms.util.MatrixMethods;
+import algorithms.utils.MatrixUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class PascalsTriangleII {
                 pascalMatrix[i][j] = pascalMatrix[i - 1][j] + pascalMatrix[i][j - 1];
             }
         }
-        MatrixMethods.printMatrix(pascalMatrix);
+        MatrixUtils.printMatrix(pascalMatrix);
         // build matrix: sum = k
         List<Integer> level = new ArrayList<>();
         for (int l = 0; l <= rowIndex; l++) {

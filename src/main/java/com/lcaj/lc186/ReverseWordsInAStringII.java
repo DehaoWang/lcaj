@@ -1,6 +1,6 @@
 package com.lcaj.lc186;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 /**
  * Created by wangdehao on 19/4/11.
@@ -8,12 +8,12 @@ import algorithms.util.ArrayMethods;
 public class ReverseWordsInAStringII {
     public static void main(String[] args) {
         char[] str = {'t','h','e',' ','s','k','y',' ','i','s',' ','b','l','u','e'};
-        ArrayMethods.printArray(str);
+        ArrayUtils.printArray(str);
         reverseWords(str);
-        ArrayMethods.printArray(str);
+        ArrayUtils.printArray(str);
         char[] str1 = {'t','h','e',' '};
         reverseWords(str1);
-        ArrayMethods.printArray(str1);
+        ArrayUtils.printArray(str1);
     }
 
     public static void reverseWords(char[] str) {
@@ -22,14 +22,14 @@ public class ReverseWordsInAStringII {
         for (int i = 0; i < str.length; i++) {
             if (str[i] == ' ') {
                 r = i - 1;
-                ArrayMethods.reverseByIndices(str, l, r);
+                ArrayUtils.reverseByIndices(str, l, r);
                 l = i + 1;
             }
         }
-        ArrayMethods.reverseByIndices(str, l, str.length - 1);
-        ArrayMethods.printArray(str);
+        ArrayUtils.reverseByIndices(str, l, str.length - 1);
+        ArrayUtils.printArray(str);
         // step 2: reverse whole sentence
-        ArrayMethods.reverseByIndices(str, 0, str.length - 1);
+        ArrayUtils.reverseByIndices(str, 0, str.length - 1);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.lcaj.lc283;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 /**
  * Created by wangdehao on 19/5/28.
  */
@@ -14,7 +14,7 @@ public class MoveZeros {
         for (int[] nums : matrix) {
 //            ArrayMethods.printArray(nums);
             moveZeroes(nums);
-            ArrayMethods.printArray(nums);
+            ArrayUtils.printArray(nums);
         }
     }
 

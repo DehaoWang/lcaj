@@ -2,7 +2,7 @@ package com.lcaj.lc95;
 
 import com.lcaj.lc94.BTInOrderTraversal;
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class UniqueBSTII {
         for (TreeNode treeNode : trees) {
             List<Integer> treePrintInorder = BTInOrderTraversal.inorderTraversal(treeNode);
             List<Integer> treePrintPreorder = BTInOrderTraversal.preorderTraversal(treeNode);
-            TreeMethods.preorderTraversalRecursive(treeNode);
+            TreeUtils.preorderTraversalRecursive(treeNode);
             System.out.println(treePrintInorder);
             System.out.println(treePrintPreorder);
             System.out.println("***");

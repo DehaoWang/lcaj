@@ -1,5 +1,7 @@
 package algorithms.slidingwindow;
 
+import algorithms.utils.SlidingWindowUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +25,7 @@ public class MaxUniqueSub {
         subMap.put(s.charAt(0), 1);
         while (r < s.length()) {
             // match: r++; else: l++
-            if (unique(subMap)) {
+            if (SlidingWindowUtils.unique(subMap)) {
                 if (r - l + 1 > maxLen) {
                     maxLen = r - l + 1;
                 }
@@ -39,14 +41,5 @@ public class MaxUniqueSub {
             }
         }
         return maxLen;
-    }
-
-    private static boolean unique(Map<Character, Integer> subMap) {
-        for (Character c : subMap.keySet()) {
-            if (subMap.get(c) > 1) {
-                return false;
-            }
-        }
-        return true;
     }
 }

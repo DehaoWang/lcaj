@@ -1,6 +1,6 @@
 package com.lcaj.lc189;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 /**
  * Created by wangdehao on 19/4/11.
@@ -9,9 +9,9 @@ public class RotateArray {
     public static void main(String[] args) {
 
         int[] nums = {0, 1, 2, 3, 4, 5, 6};
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
         rotate(nums, 3);
-        ArrayMethods.printArray(nums);
+        ArrayUtils.printArray(nums);
     }
 
     private static void rotate(int[] nums, int k) {
@@ -20,9 +20,9 @@ public class RotateArray {
             return;
         }
         k = k % len;
-        ArrayMethods.reverseByIndices(nums, 0, len - 1);
-        ArrayMethods.reverseByIndices(nums, 0, k - 1);
-        ArrayMethods.reverseByIndices(nums, k, len - 1);
+        ArrayUtils.reverseByIndices(nums, 0, len - 1);
+        ArrayUtils.reverseByIndices(nums, 0, k - 1);
+        ArrayUtils.reverseByIndices(nums, k, len - 1);
     }
 
 
@@ -45,7 +45,7 @@ public class RotateArray {
             nums[index] = temp;
             temp = temp2;
             cnt++;
-            ArrayMethods.printArray(nums);
+            ArrayUtils.printArray(nums);
         }
         return;
     }

@@ -1,7 +1,7 @@
 package com.lcaj.lc108;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 /**
  * Created by wangdehao on 18/12/3.
@@ -12,8 +12,8 @@ public class ConvertArrayToBST {
 //        int[] nums = {-10, -3, 0, 5, 9};
         int[] nums = {0};
         TreeNode root = sortedArrayToBST(nums);
-        TreeMethods.inorderTraversal(root);
-        TreeMethods.preorderTraversal(root);
+        TreeUtils.inorderTraversal(root);
+        TreeUtils.preorderTraversal(root);
     }
 
     public static TreeNode sortedArrayToBST(int[] nums) {

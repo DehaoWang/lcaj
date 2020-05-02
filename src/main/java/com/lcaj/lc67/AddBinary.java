@@ -1,6 +1,6 @@
 package com.lcaj.lc67;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 /**
  * Created by wangdehao on 18/11/13.
@@ -27,8 +27,8 @@ public class AddBinary {
         char[] cB = b.toCharArray();
         int maxLen = (cA.length > cB.length ? cA.length : cB.length) + 1;
         char[] cS = new char[maxLen];
-        ArrayMethods.reverseByIndices(cA, 0, cA.length - 1);
-        ArrayMethods.reverseByIndices(cB, 0, cB.length - 1);
+        ArrayUtils.reverseByIndices(cA, 0, cA.length - 1);
+        ArrayUtils.reverseByIndices(cB, 0, cB.length - 1);
 
         int iA = 0, iB = 0, iS = 0;
         int carry = 0;
@@ -57,7 +57,7 @@ public class AddBinary {
         if (carry > 0) {
             cS[iS] = (char) (carry + '0');
         }
-        ArrayMethods.reverseByIndices(cS, 0, cS.length - 1);
+        ArrayUtils.reverseByIndices(cS, 0, cS.length - 1);
 
         String res = "";
         int firstIndex = carry > 0 ? 0 : 1;

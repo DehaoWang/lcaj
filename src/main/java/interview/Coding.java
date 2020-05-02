@@ -1,7 +1,7 @@
 package interview;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +14,12 @@ public class Coding {
         root.right.right = new TreeNode(2);
         root.right.right.right = new TreeNode(3);
         root.right.right.right.right = new TreeNode(4);
-        TreeMethods.inorderTraversal(root);
-        TreeMethods.preorderTraversal(root);
+        TreeUtils.inorderTraversal(root);
+        TreeUtils.preorderTraversal(root);
 
         TreeNode balancedRoot = getBalancedBST(root);
-        TreeMethods.inorderTraversal(balancedRoot);
-        TreeMethods.preorderTraversal(balancedRoot);
+        TreeUtils.inorderTraversal(balancedRoot);
+        TreeUtils.preorderTraversal(balancedRoot);
     }
 
     public static TreeNode getBalancedBST(TreeNode root) {

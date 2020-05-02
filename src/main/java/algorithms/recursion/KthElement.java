@@ -1,7 +1,5 @@
 package algorithms.recursion;
 
-import algorithms.util.ArrayMethods;
-
 import static algorithms.recursion.QuickSort.partitionL;
 
 public class KthElement {

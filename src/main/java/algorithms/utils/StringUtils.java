@@ -1,6 +1,6 @@
-package algorithms.util;
+package algorithms.utils;
 
-public class StringMethods {
+public class StringUtils {
     public static int simplePatternMatching(String s, String t) {
         if (s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) {
             return -1;
@@ -59,7 +59,7 @@ public class StringMethods {
         char[] charS = s.toCharArray();
         char[] charT = t.toCharArray();
         int[] next = getNext(charT);
-        ArrayMethods.printArray(next);
+        ArrayUtils.printArray(next);
         int i = 0, j = 0;
         while (i < charS.length && j < charT.length) {
             if (j == -1 || charS[i] == charT[j]) {

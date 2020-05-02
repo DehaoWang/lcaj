@@ -1,6 +1,6 @@
 package com.lcaj.lc88;
 
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 /**
  * Created by wangdehao on 18/11/22.
@@ -12,7 +12,7 @@ public class MergeSortedArray {
         int[] nums2 = {2, 5, 6};
 
         merge(nums1, 3, nums2, 3);
-        ArrayMethods.printArray(nums1);
+        ArrayUtils.printArray(nums1);
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {

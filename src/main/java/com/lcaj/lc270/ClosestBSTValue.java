@@ -1,7 +1,7 @@
 package com.lcaj.lc270;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 /**
  * Created by wangdehao on 19/5/27.
@@ -14,7 +14,7 @@ public class ClosestBSTValue {
 
         root3.left.left = new TreeNode(1);
         root3.left.right = new TreeNode(3);
-        TreeMethods.inorderTraversal(root3);
+        TreeUtils.inorderTraversal(root3);
         System.out.println(closestValue(root3, 3.6));
         TreeNode root4 = new TreeNode(2);
         root4.left = new TreeNode(1);

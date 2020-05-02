@@ -334,5 +334,5 @@ public class EggDrop {
     }
 
     // method 2.F: get Try By Egg & Level Final: binary search √ & lower bound pruning X ?
-    // TODO: 2020-04-13
+    // TODO: 2020-04-13 refinement
 }

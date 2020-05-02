@@ -1,6 +1,6 @@
 package algorithms.dynamicprogramming;
 
-import algorithms.util.MatrixMethods;
+import algorithms.utils.MatrixUtils;
 
 public class LongestComSeq {
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class LongestComSeq {
                 }
             }
         }
-        MatrixMethods.printMatrix(dp);
+        MatrixUtils.printMatrix(dp);
         return dp[lenS][lenT];
     }
 

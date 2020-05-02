@@ -1,9 +1,9 @@
-package algorithms.util;
+package algorithms.utils;
 
 /**
  * Created by wangdehao on 18/11/15.
  */
-public class ArrayMethods {
+public class ArrayUtils {
     public static void printArray(int[] nums) {
         for (int i : nums) {
             System.out.print(i + ", ");

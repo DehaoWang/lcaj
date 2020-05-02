@@ -6,7 +6,8 @@ public class CoinTaking {
         System.out.println(getMaxDiff(nums));
     }
 
-    private static int getMaxDiff(int[] nums) {
+    // TODO: 2020-05-02 coin taking
+    public static int getMaxDiff(int[] nums) {
 
         return 0;
     }

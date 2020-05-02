@@ -1,6 +1,6 @@
 package com.lcaj.lc48;
 
-import static algorithms.util.MatrixMethods.printMatrix;
+import static algorithms.utils.MatrixUtils.printMatrix;
 
 /**
  * Created by wangdehao on 18/11/4.

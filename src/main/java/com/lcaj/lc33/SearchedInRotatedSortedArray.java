@@ -1,7 +1,7 @@
 package com.lcaj.lc33;
 
 import algorithms.binarysearch.BinarySearch;
-import algorithms.util.ArrayMethods;
+import algorithms.utils.ArrayUtils;
 
 /**
  * Created by wangdehao on 18/10/28.
@@ -15,7 +15,7 @@ public class SearchedInRotatedSortedArray {
 
 //        System.out.println(binarySearch(nums, target));
 //        System.out.println(ArrayMethods.binarySearch(nums, target));
-        System.out.println(ArrayMethods.binarySearchRotated(nums2, target2));
+        System.out.println(ArrayUtils.binarySearchRotated(nums2, target2));
         System.out.println(binarySearchRotated(nums2, target2));
 
     }

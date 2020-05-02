@@ -1,7 +1,7 @@
 package com.lcaj.lc107;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -22,8 +22,8 @@ public class BTLevelOrderTraversalII {
         root3.left.left = new TreeNode(2);
         root3.left.right = new TreeNode(1);
         System.out.println(levelOrderBottom(root3));
-        TreeMethods.bfsTraversal(root3);
-        TreeMethods.dfsTraversal(root3);
+        TreeUtils.bfsTraversal(root3);
+        TreeUtils.dfsTraversal(root3);
     }
 
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {

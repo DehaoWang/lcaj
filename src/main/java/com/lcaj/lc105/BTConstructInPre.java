@@ -1,7 +1,7 @@
 package com.lcaj.lc105;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 /**
  * Created by wangdehao on 18/11/30.
@@ -13,9 +13,9 @@ public class BTConstructInPre {
         int[] inorder = {9, 3, 15, 20, 7};
         int[] postorder = {9, 15, 7, 20, 3};
         TreeNode root = buildTree(preorder, inorder);
-        TreeMethods.preorderTraversal(root);
-        TreeMethods.inorderTraversal(root);
-        TreeMethods.postorderTraversal(root);
+        TreeUtils.preorderTraversal(root);
+        TreeUtils.inorderTraversal(root);
+        TreeUtils.postorderTraversal(root);
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {

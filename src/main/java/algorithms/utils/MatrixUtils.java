@@ -1,9 +1,9 @@
-package algorithms.util;
+package algorithms.utils;
 
 /**
  * Created by wangdehao on 18/11/4.
  */
-public class MatrixMethods {
+public class MatrixUtils {
     public static void printMatrix(char[][] matrix) {
         int h = matrix.length;
         int w = matrix[0].length;

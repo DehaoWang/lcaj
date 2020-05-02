@@ -1,7 +1,7 @@
 package algorithms.recursion;
 
 import datastructures.basics.tree.TreeNode;
-import algorithms.util.TreeMethods;
+import algorithms.utils.TreeUtils;
 
 public class PathSumIII {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class PathSumIII {
         root.left.left.left = new TreeNode(2);
         root.left.left.right = new TreeNode(-2);
         root.left.right.right = new TreeNode(1);
-        TreeMethods.inorderTraversal(root);
+        TreeUtils.inorderTraversal(root);
         System.out.println(countPathSum(root, 8));
 
         // following up: zigzag path?

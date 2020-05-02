@@ -1,9 +1,9 @@
-package algorithms.slidingwindow;
+package algorithms.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class UtilsSW {
+public class SlidingWindowUtils {
     public static Map<Character, Integer> getStrMap(String t) {
         Map<Character, Integer> strMap = new HashMap<>();
         char[] ca = t.toCharArray();
@@ -18,6 +18,15 @@ public class UtilsSW {
             int tc = tMap.get(c);
             int sc = subMap.getOrDefault(c, 0);
             if (sc < tc) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean unique(Map<Character, Integer> subMap) {
+        for (Character c : subMap.keySet()) {
+            if (subMap.get(c) > 1) {
                 return false;
             }
         }
