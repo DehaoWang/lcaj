@@ -1,43 +1,44 @@
 package algorithms.recursion;
 
+import algorithms.util.ArrayMethods;
+
+import static algorithms.recursion.QuickSort.partitionL;
+
 public class KthElement {
+    //COMPLETE QuickSort Solution
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 2, 7, 1, 3, 5, 2, 4};
+        System.out.println(getKthLargest(nums, 5));
+        System.out.println(getKthSmallest(nums, 1));
+    }
 
+    public static int getKthLargest(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+    }
 
-    // TODO: 2020-04-29 COMPLETE
+    public static int getKthSmallest(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, k - 1);
+    }
 
-
-//    public int getKth(int[] a, int k){
-//        // special case
-//        if(a == null || a.length == 0){
-//            return -1;
-//        }
-//        return getKthRecursive(a, k, 0, a.length - 1);
-//    }
-
-
-//    public int getKthRecursive(int[] a, int k, int l, int r){
-//        int pivot = a[l];
-//        int m = 0;
-//        while(l < r){
-//            while(l < r && a[l] <= pivot){
-//                l++;
-//            }
-//            while(l < r && a[r] >= pivot){
-//                r--;
-//            }
-//            // swap
-//            int temp = a[l];
-//            a[l] = a[r];
-//            a[r] = temp;
-//        }
-//        //todo
-//
-//        if(m == r - l + 1 - k){
-//            return pivot;
-//        } else if (m < r - l + 1 - k){
-//            return getKthRecursive(a, , m, r);
-//        } else {
-//            return getKthRecursive(a, , l, m);
-//        }
-//    }
+    public static int quickSelect(int[] nums, int left, int right, int k) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        if (left == right) {
+            return nums[left];
+        }
+        if (left < right) {
+            int m = partitionL(nums, left, right);
+//            System.out.println("m=" + m + ", k=" + k);
+//            ArrayMethods.printArray(nums);
+            if (m == k) {
+                return nums[m];
+            } else if (m < k) {
+                return quickSelect(nums, m + 1, right, k);
+            } else {
+                return quickSelect(nums, left, m - 1, k);
+            }
+        }
+        return -1;
+    }
 }
