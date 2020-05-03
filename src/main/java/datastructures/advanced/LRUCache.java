@@ -2,8 +2,10 @@ package datastructures.advanced;
 
 import datastructures.basics.linkedlist.DLLNode;
 import datastructures.basics.linkedlist.DummyDoublyLinkedList;
+import datastructures.basics.linkedlist.LinkedList;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class LRUCache {
     public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class LRUCache {
         System.out.println(cache.get(1));       // returns -1 (not found)
         System.out.println(cache.get(3));       // returns 3
         System.out.println(cache.get(4));       // returns 4
+
     }
 
     HashMap<Integer, DLLNode> hashList;
