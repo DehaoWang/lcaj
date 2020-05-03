@@ -13,7 +13,6 @@ public class QuickSort {
         ArrayUtils.printArray(nums);
         quickSort(nums, 0, nums.length - 1);
         ArrayUtils.printArray(nums);
-
     }
 
     public static void quickSort(int[] nums, int left, int right) {
@@ -25,36 +24,5 @@ public class QuickSort {
             quickSort(nums, left, m - 1);
             quickSort(nums, m + 1, right);
         }
-    }
-
-
-
-
-    // buggy
-    public static int partitionL2(int[] nums, int left, int right) {
-//        System.out.println("left=" + left + ", right=" + right);
-//        ArrayMethods.printArray(nums);
-        int l = left;
-        int r = right;
-        int pivot = nums[left];
-        while (l <= r) {
-            // important: if using L as pivot, justify R first, vise versa
-            while (l <= r && nums[r] > pivot) {
-                r--;
-            }
-            while (l <= r && nums[l] < pivot) {
-                l++;
-            }
-//            System.out.println("l=" + l + ", r=" + r);
-            if (l <= r) {
-                ArrayUtils.swap(nums, l, r);
-                l++;
-                r--;
-            }
-//            ArrayMethods.printArray(nums);
-        }
-        // important: use swap instead of assignment
-        ArrayUtils.swap(nums, left, l);
-        return l;
     }
 }
