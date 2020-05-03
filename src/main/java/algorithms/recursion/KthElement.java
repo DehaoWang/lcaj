@@ -1,6 +1,7 @@
 package algorithms.recursion;
 
-import static algorithms.recursion.QuickSort.partitionL;
+import algorithms.utils.ArrayUtils;
+
 
 public class KthElement {
     //COMPLETE QuickSort Solution
@@ -26,7 +27,7 @@ public class KthElement {
             return nums[left];
         }
         if (left < right) {
-            int m = partitionL(nums, left, right);
+            int m = ArrayUtils.partitionL(nums, left, right);
 //            System.out.println("m=" + m + ", k=" + k);
 //            ArrayMethods.printArray(nums);
             if (m == k) {

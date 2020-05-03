@@ -159,4 +159,54 @@ public class ArrayUtils {
             }
         }
     }
+
+    public static int partitionL(int[] nums, int left, int right) {
+//        System.out.println("left=" + left + ", right=" + right);
+//        printArray(nums);
+        int l = left;
+        int r = right;
+        int pivot = nums[left];
+        while (l < r) {
+            // important: if using L as pivot, justify R first, vise versa
+            while (l < r && nums[r] > pivot) {
+                r--;
+            }
+            while (l < r && nums[l] <= pivot) {
+                l++;
+            }
+//            System.out.println("l=" + l + ", r=" + r);
+            if (l < r) {
+                swap(nums, l, r);
+            }
+//            printArray(nums);
+        }
+        // important: use swap instead of assignment
+        swap(nums, left, l);
+        return l;
+    }
+
+
+    public static int partitionR(int[] nums, int left, int right) {
+//        System.out.println("left=" + left + ", right=" + right);
+        ArrayUtils.printArray(nums);
+        int l = left;
+        int r = right;
+        int pivot = nums[right];
+        while (l < r) {
+            // important: if using L as pivot, justify R first, vise versa
+            while (l < r && nums[l] < pivot) {
+                l++;
+            }
+            while (l < r && nums[r] >= pivot) {
+                r--;
+            }
+//            System.out.println("l=" + l + ", r=" + r);
+            if (l < r) {
+                swap(nums, l, r);
+            }
+        }
+        // important: use swap instead of assignment
+        swap(nums, right, r);
+        return l;
+    }
 }
