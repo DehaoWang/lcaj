@@ -9,7 +9,7 @@ public class LinkedList {
         ListNode.printListNode(reverseListInplace(listNode));
     }
 
-    // insert method
+    // insertion approach
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;

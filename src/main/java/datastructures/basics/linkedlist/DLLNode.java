@@ -2,12 +2,18 @@ package datastructures.basics.linkedlist;
 
 public class DLLNode {
     // Definition for doubly-linked list.
+    public int key;
     public int val;
     public DLLNode prev;
     public DLLNode next;
 
     public DLLNode(int x) {
         val = x;
+    }
+
+    public DLLNode(int key, int value) {
+        this.key = key;
+        this.val = value;
     }
 
     public static DLLNode getListFromArray(int[] a) {
@@ -22,7 +28,7 @@ public class DLLNode {
             curr = curr.next;
             curr.prev = prev;
             prev = curr;
-         }
+        }
         return first;
     }
 
