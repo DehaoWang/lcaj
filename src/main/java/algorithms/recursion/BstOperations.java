@@ -14,9 +14,18 @@ public class BstOperations {
         root6.right.right = new TreeNode(7);
 
         TreeUtils.morrisInOrderTraversal(root6);
+        plusX(root6, 1);
+        TreeUtils.morrisInOrderTraversal(root6);
+        plusX(root6, -1);
+        TreeUtils.morrisInOrderTraversal(root6);
     }
 
-    public void plusOne(TreeNode root) {
-
+    private static void plusX(TreeNode root, int x) {
+        if (root == null) {
+            return;
+        }
+        root.val += x;
+        plusX(root.left, x);
+        plusX(root.right, x);
     }
 }
