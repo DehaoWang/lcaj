@@ -1,8 +1,8 @@
-package lcwc.wc187;
+package algorithms.slidingwindow;
 
 import datastructures.advanced.MonotonicQueue;
 
-import java.util.*;
+import java.util.TreeMap;
 
 public class ConditionalLongestSubArray {
     public static void main(String[] args) {
@@ -136,7 +136,6 @@ public class ConditionalLongestSubArray {
         return maxLen;
     }
 
-    // TODO: 2020-05-04  
     public static int longestSubarraySwDeque(int[] nums, int limit) {
         int l = 0;
         int r;
