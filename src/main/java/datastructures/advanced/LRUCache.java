@@ -2,10 +2,8 @@ package datastructures.advanced;
 
 import datastructures.basics.linkedlist.DLLNode;
 import datastructures.basics.linkedlist.DummyDoublyLinkedList;
-import datastructures.basics.linkedlist.LinkedList;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 public class LRUCache {
     public static void main(String[] args) {
@@ -23,9 +21,9 @@ public class LRUCache {
 
     }
 
-    HashMap<Integer, DLLNode> hashList;
-    DummyDoublyLinkedList doublyLinkedList;
-    int capacity;
+    private HashMap<Integer, DLLNode> hashList;
+    private DummyDoublyLinkedList doublyLinkedList;
+    private int capacity;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
