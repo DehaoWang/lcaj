@@ -7,16 +7,6 @@ import java.util.Deque;
 
 public class MonotonicQueue {
     public static void main(String[] args) {
-        Deque deque = new ArrayDeque();
-        for (int i = 0; i < 6; i++) {
-            deque.addLast(i);
-        }
-        System.out.println(deque);
-        deque.pollLast();
-        System.out.println(deque);
-        System.out.println(deque.peekLast());
-        System.out.println(deque.peekFirst());
-
         int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
         ArrayUtils.printArray(maxSlidingWindow(nums, 3));
     }
@@ -36,27 +26,26 @@ public class MonotonicQueue {
         return ans;
     }
 
+    private Deque<Integer> deque;
+
     public MonotonicQueue() {
-        dq = new ArrayDeque<>();
+        deque = new ArrayDeque<>();
     }
 
-    private Deque<Integer> dq;
-
     public void push(int n) {
-        while (!dq.isEmpty() && dq.peekLast() < n) {
-            dq.pollLast();
+        while (!deque.isEmpty() && deque.peekLast() < n) {
+            deque.pollLast();
         }
-        dq.addLast(n);
+        deque.addLast(n);
     }
 
     public int max() {
-        return dq.peekFirst();
+        return deque.peekFirst();
     }
 
     public void pop(int n) {
-        if (!dq.isEmpty() && dq.peekFirst() == n) {
-            dq.pollFirst();
+        if (!deque.isEmpty() && deque.peekFirst() == n) {
+            deque.pollFirst();
         }
     }
-
 }
