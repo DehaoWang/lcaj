@@ -1,7 +1,7 @@
-package interview;
+package interview.tbc;
 
-import datastructures.basics.tree.TreeNode;
 import algorithms.utils.TreeUtils;
+import datastructures.basics.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
