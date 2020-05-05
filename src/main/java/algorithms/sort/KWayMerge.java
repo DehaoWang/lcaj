@@ -1,4 +1,4 @@
-package algorithms.tbd;
+package algorithms.sort;
 
 import datastructures.basic.linkedlist.ListNode;
 
