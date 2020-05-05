@@ -104,7 +104,7 @@ public class BstOperations {
     }
 
     public static TreeNode deleteFromBST(TreeNode root, int val) {
-        // TODO: 2020-05-05  
+        // TODO: 2020-05-05
         return null;
     }
 }
