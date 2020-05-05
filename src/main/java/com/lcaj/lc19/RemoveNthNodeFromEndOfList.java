@@ -1,6 +1,6 @@
 package com.lcaj.lc19;
 
-import datastructures.basics.linkedlist.ListNode;
+import datastructures.basic.linkedlist.ListNode;
 
 /**
  * Created by wangdehao on 18/4/28.

@@ -2,7 +2,7 @@ package com.lcaj.lc222;
 
 import algorithms.recursion.NodeCounting;
 import algorithms.utils.TreeUtils;
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 
 public class CountCompleteTreeNodes {
     public static void main(String[] args) {

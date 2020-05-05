@@ -1,6 +1,6 @@
 package algorithms.utils;
 
-import datastructures.basics.graph.Graph;
+import datastructures.basic.graph.Graph;
 
 import java.util.*;
 

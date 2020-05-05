@@ -1,6 +1,6 @@
 package com.lcaj.lc203;
 
-import datastructures.basics.linkedlist.ListNode;
+import datastructures.basic.linkedlist.ListNode;
 
 /**
  * Created by wangdehao on 19/4/15.

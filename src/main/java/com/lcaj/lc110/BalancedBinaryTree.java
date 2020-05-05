@@ -2,7 +2,7 @@ package com.lcaj.lc110;
 
 import com.lcaj.lc102.BTLevelOrderTraversal;
 import com.lcaj.lc104.MaxDepthOfBT;
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 
 /**
  * Created by wangdehao on 18/12/3.

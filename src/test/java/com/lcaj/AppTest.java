@@ -5,7 +5,7 @@ package com.lcaj;
 //import junit.framework.TestSuite;
 
 import algorithms.utils.TreeUtils;
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 
 /**
  * Unit test for simple App.

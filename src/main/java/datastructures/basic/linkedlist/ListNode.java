@@ -1,4 +1,4 @@
-package datastructures.basics.linkedlist;
+package datastructures.basic.linkedlist;
 
 /**
  * Created by wangdehao on 18/4/12.

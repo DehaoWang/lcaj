@@ -1,4 +1,4 @@
-package datastructures.basics.interval;
+package datastructures.basic.interval;
 
 /**
  * Created by wangdehao on 18/11/11.

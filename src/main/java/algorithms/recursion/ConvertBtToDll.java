@@ -1,8 +1,8 @@
 package algorithms.recursion;
 
-import datastructures.basics.linkedlist.DLLNode;
-import datastructures.basics.linkedlist.DoublyLinkedList;
-import datastructures.basics.tree.TreeDllNode;
+import datastructures.basic.linkedlist.DLLNode;
+import datastructures.basic.linkedlist.DoublyLinkedList;
+import datastructures.basic.tree.TreeDllNode;
 
 import java.util.Stack;
 

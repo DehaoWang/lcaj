@@ -1,7 +1,7 @@
-package datastructures.advanced;
+package datastructures.advanced.lru;
 
-import datastructures.basics.linkedlist.DLLNode;
-import datastructures.basics.linkedlist.DummyDoublyLinkedList;
+import datastructures.basic.linkedlist.DLLNode;
+import datastructures.basic.linkedlist.DummyDoublyLinkedList;
 
 import java.util.HashMap;
 

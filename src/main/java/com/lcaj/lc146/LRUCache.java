@@ -2,7 +2,7 @@ package com.lcaj.lc146;
 
 public class LRUCache {
     public static void main(String[] args) {
-        datastructures.advanced.LRUCache cache = new datastructures.advanced.LRUCache(2/* capacity */);
+        datastructures.advanced.lru.LRUCache cache = new datastructures.advanced.lru.LRUCache(2/* capacity */);
 
         cache.put(1, 1);
         cache.put(2, 2);

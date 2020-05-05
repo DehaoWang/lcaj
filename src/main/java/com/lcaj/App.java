@@ -1,6 +1,6 @@
 package com.lcaj;
 
-import datastructures.basics.graph.Graph;
+import datastructures.basic.graph.Graph;
 import algorithms.utils.ArrayUtils;
 import algorithms.utils.GraphUtils;
 import algorithms.utils.StringUtils;

@@ -1,7 +1,7 @@
-package datastructures.basics.linkedlist;
+package datastructures.basic.linkedlist;
 
 
-import datastructures.basics.tree.TreeDllNode;
+import datastructures.basic.tree.TreeDllNode;
 
 public class DoublyLinkedList {
     public static DLLNode head;

@@ -1,4 +1,4 @@
-package datastructures.advanced;
+package datastructures.advanced.lru;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

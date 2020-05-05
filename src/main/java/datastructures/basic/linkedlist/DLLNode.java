@@ -1,4 +1,4 @@
-package datastructures.basics.linkedlist;
+package datastructures.basic.linkedlist;
 
 public class DLLNode {
     // Definition for doubly-linked list.

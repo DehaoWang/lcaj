@@ -1,4 +1,4 @@
-package datastructures.basics.linkedlist;
+package datastructures.basic.linkedlist;
 
 public class LinkedList {
     public static ListNode head;

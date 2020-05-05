@@ -1,4 +1,4 @@
-package datastructures.basics.tree;
+package datastructures.basic.tree;
 
 public class TreeDllNode {
     // only for Tree2Dll & Dll2Tree

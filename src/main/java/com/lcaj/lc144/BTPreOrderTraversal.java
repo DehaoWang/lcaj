@@ -1,7 +1,7 @@
 package com.lcaj.lc144;
 
 import com.lcaj.lc94.BTInOrderTraversal;
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 import algorithms.utils.TreeUtils;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package algorithms.recursion;
 
 import algorithms.utils.TreeUtils;
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 
 public class BstOperations {
     public static void main(String[] args) {

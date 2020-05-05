@@ -1,4 +1,4 @@
-package datastructures.basics.graph;
+package datastructures.basic.graph;
 
 public class Vertex {
     private String name;

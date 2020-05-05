@@ -1,6 +1,6 @@
 package com.lcaj.lc94;
 
-import datastructures.basics.tree.TreeNode;
+import datastructures.basic.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
