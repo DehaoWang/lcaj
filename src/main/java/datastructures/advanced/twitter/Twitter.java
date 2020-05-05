@@ -40,7 +40,7 @@ public class Twitter {
             return res;
         }
         Set<Integer> followees = userMap.get(userId).getFollowed();
-        PriorityQueue<Tweet> pq = new PriorityQueue<>(followees.size(), (a, b) -> (b.getTime() - a.getTime()));
+        PriorityQueue<Tweet> pq = new PriorityQueue<>(followees.size(), Comparator.comparingInt(a -> -a.getTime()));
 
         // K-Way Merge
         for (Integer followeeId : followees) {
