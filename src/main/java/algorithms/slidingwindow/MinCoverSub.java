@@ -1,6 +1,6 @@
 package algorithms.slidingwindow;
 
-import algorithms.utils.SlidingWindowUtils;
+import algorithms.utils.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,14 +34,14 @@ public class MinCoverSub {
     public static String minCoverSubBF(String s, String t) {
         int lenS = s.length();
         int lenT = t.length();
-        Map<Character, Integer> tMap = SlidingWindowUtils.getStrMap(t);
+        Map<Character, Integer> tMap = StringUtils.getStrMap(t);
         int min = Integer.MAX_VALUE;
         String minSub = "";
         for (int i = 0; i <= lenS - lenT; i++) {
             for (int j = i + lenT; j <= lenS; j++) {
                 String sub = s.substring(i, j);
-                Map<Character, Integer> subMap = SlidingWindowUtils.getStrMap(sub);
-                if (SlidingWindowUtils.cover(subMap, tMap)) {
+                Map<Character, Integer> subMap = StringUtils.getStrMap(sub);
+                if (StringUtils.cover(subMap, tMap)) {
                     if (j - i < min) {
                         min = j - i;
                         minSub = sub;
@@ -54,7 +54,7 @@ public class MinCoverSub {
 
     public static String minCoverSubSW(String s, String t) {
         int lenS = s.length();
-        Map<Character, Integer> tMap = SlidingWindowUtils.getStrMap(t);
+        Map<Character, Integer> tMap = StringUtils.getStrMap(t);
         int minLen = Integer.MAX_VALUE;
         String minSub = "";
         int l = 0;
@@ -63,7 +63,7 @@ public class MinCoverSub {
         subMap.put(s.charAt(0), 1);
         while (r < lenS) {
             // match: l++; else: r++;
-            if (!SlidingWindowUtils.cover(subMap, tMap)) {
+            if (!StringUtils.cover(subMap, tMap)) {
                 r++;
                 if (r < lenS) {
                     char cR = s.charAt(r);

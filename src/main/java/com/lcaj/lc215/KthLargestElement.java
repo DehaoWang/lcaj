@@ -1,7 +1,6 @@
 package com.lcaj.lc215;
 
-import algorithms.recursion.KthElement;
-import com.lcaj.lc703.KthLargest;
+import algorithms.sort.KthElement;
 
 public class KthLargestElement {
     public static void main(String[] args) {

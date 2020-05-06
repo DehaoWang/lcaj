@@ -1,4 +1,4 @@
-package algorithms.recursion;
+package algorithms.sort;
 
 import algorithms.utils.ArrayUtils;
 

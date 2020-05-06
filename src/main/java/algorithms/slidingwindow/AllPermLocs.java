@@ -1,6 +1,6 @@
 package algorithms.slidingwindow;
 
-import algorithms.utils.SlidingWindowUtils;
+import algorithms.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,12 +18,12 @@ public class AllPermLocs {
         List<Integer> locs = new ArrayList<>();
         int l = 0;
         int r = 0;
-        Map<Character, Integer> tMap = SlidingWindowUtils.getStrMap(t);
+        Map<Character, Integer> tMap = StringUtils.getStrMap(t);
         Map<Character, Integer> subMap = new HashMap<>();
         subMap.put(s.charAt(0), 1);
         while (r < s.length()) {
             // match: l++; else: r++
-            if (!SlidingWindowUtils.cover(subMap, tMap)) {
+            if (!StringUtils.cover(subMap, tMap)) {
                 r++;
                 if (r < s.length()) {
                     char cR = s.charAt(r);

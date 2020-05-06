@@ -1,5 +1,7 @@
 package com.lcaj.lc242;
 
+import algorithms.utils.StringUtils;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +13,16 @@ public class ValidAnagram {
     public static void main(String[] args) {
         System.out.println(isAnagram("anagram", "nagaram"));
         System.out.println(isAnagramSort("anagram", "nagaram"));
+        System.out.println(isAnagramU("anagram", "nagaram"));
 
         System.out.println(isAnagram("anagra", "nagaram"));
         System.out.println(isAnagramSort("anagra", "nagaram"));
+        System.out.println(isAnagramU("anagra", "nagaram"));
+
 
         System.out.println(isAnagram("anagrm", "nagaram"));
         System.out.println(isAnagramSort("anagrm", "nagaram"));
+        System.out.println(isAnagramU("anagrm", "nagaram"));
 
     }
 
@@ -57,11 +63,21 @@ public class ValidAnagram {
             return false;
         } else {
             for (int i = 0; i < sArray.length; i++) {
-                if (sArray[i] != tArray[i]){
+                if (sArray[i] != tArray[i]) {
                     return false;
                 }
             }
         }
         return true;
+    }
+
+    public static boolean isAnagramU(String s, String t) {
+        if (s.equals(t)) {
+            return false;
+        }
+        Map<Character, Integer> sMap = StringUtils.getStrMap(s);
+        Map<Character, Integer> tMap = StringUtils.getStrMap(t);
+
+        return StringUtils.cover(sMap, tMap) && StringUtils.cover(tMap, sMap);
     }
 }
