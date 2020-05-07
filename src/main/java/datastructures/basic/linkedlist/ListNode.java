@@ -46,11 +46,9 @@ public class ListNode {
         while (l != null) {
             // temp
             ListNode temp = l.next;
-
             // concat
             l.next = dummyNode.next;
             dummyNode.next = l;
-
             // move
             l = temp;
         }

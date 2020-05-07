@@ -1,6 +1,6 @@
 package lcwc.wc187;
 
-import datastructures.advanced.MonotonicQueue;
+import datastructures.advanced.stackNqueue.MonotonicQueue;
 
 import java.util.*;
 

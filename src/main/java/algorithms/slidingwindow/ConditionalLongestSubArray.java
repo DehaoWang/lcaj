@@ -1,6 +1,6 @@
 package algorithms.slidingwindow;
 
-import datastructures.advanced.MonotonicQueue;
+import datastructures.advanced.stackNqueue.MonotonicQueue;
 
 import java.util.TreeMap;
 

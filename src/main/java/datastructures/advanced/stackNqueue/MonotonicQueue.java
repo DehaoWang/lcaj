@@ -1,4 +1,4 @@
-package datastructures.advanced;
+package datastructures.advanced.stackNqueue;
 
 import algorithms.utils.ArrayUtils;
 

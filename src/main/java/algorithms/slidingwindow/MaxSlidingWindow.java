@@ -1,7 +1,7 @@
 package algorithms.slidingwindow;
 
 import algorithms.utils.ArrayUtils;
-import datastructures.advanced.MonotonicQueue;
+import datastructures.advanced.stackNqueue.MonotonicQueue;
 
 public class MaxSlidingWindow {
     public static void main(String[] args) {

@@ -83,7 +83,7 @@ public class StringUtils {
         int[] next = new int[charT.length];
         next[0] = -1;
         int i = 0, j = -1;
-        while (i < charT.length-1) {
+        while (i < charT.length - 1) {
             if (j == -1 || charT[i] == charT[j]) {
                 i++;
                 j++;
@@ -105,6 +105,9 @@ public class StringUtils {
     }
 
     public static boolean cover(Map<Character, Integer> subMap, Map<Character, Integer> tMap) {
+        if (subMap.size() < tMap.size()) {
+            return false;
+        }
         for (Character c : tMap.keySet()) {
             int tc = tMap.get(c);
             int sc = subMap.getOrDefault(c, 0);
