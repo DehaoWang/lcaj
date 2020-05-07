@@ -6,29 +6,33 @@ import java.util.List;
 public class Permutations {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        System.out.println(permute(nums, 2));
+        int k = 2;
+
+        System.out.println(permute(nums, k));
+
+        System.out.println(TemplateBT.backtrackTemplate(nums, k, TemplateBT.PERMUTATIONS));
     }
 
     // Ank
     public static List<List<Integer>> permute(int[] nums, int k) {
         LinkedList<Integer> track = new LinkedList<>();
         List<List<Integer>> res = new LinkedList<>();
-        backtrack(res, track, nums, k);
+        backtrack(res, track, nums, k, 0);
         return res;
     }
 
-    private static void backtrack(List<List<Integer>> res, LinkedList<Integer> track, int[] nums, int r) {
-        if (r == 0) {
+    public static void backtrack(List<List<Integer>> res, LinkedList<Integer> track, int[] nums, int k, int start) {
+        if (track.size() >= k) {
             res.add(new LinkedList<>(track));
             return;
         }
-        for (int n : nums) {
+        for (int i = start; i < nums.length; i++) {
             // apply 'contains' to prune
-            if (track.contains(n)) {
+            if (track.contains(nums[i])) {
                 continue;
             }
-            track.add(n);
-            backtrack(res, track, nums, r - 1);
+            track.add(nums[i]);
+            backtrack(res, track, nums, k, start);
             track.removeLast();
         }
     }

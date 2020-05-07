@@ -1,31 +1,28 @@
 package algorithms.backtrack;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Combinations {
+public class SubSets {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        int k = 2;
 
-        System.out.println(combine(nums, k));
+        System.out.println(subsets(nums));
 
-        System.out.println(TemplateBT.backtrackTemplate(nums, k, TemplateBT.COMBINATIONS));
+        System.out.println(TemplateBT.backtrackTemplate(nums, 0, TemplateBT.SUBSETS));
     }
 
-    // Cnk
-    public static List<List<Integer>> combine(int[] nums, int k) {
+    public static List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
         LinkedList<Integer> track = new LinkedList<>();
-        List<List<Integer>> res = new LinkedList<>();
-        backtrack(res, track, nums, k, 0);
+        backtrack(res, track, nums, 0, 0);
+
         return res;
     }
 
     public static void backtrack(List<List<Integer>> res, LinkedList<Integer> track, int[] nums, int k, int start) {
-        if (track.size() >= k) {
-            res.add(new LinkedList<>(track));
-            return;
-        }
+        res.add(new LinkedList<>(track));
         for (int i = start; i < nums.length; i++) {
             // apply 'start' to prune
 //            if (track.contains(nums[i])) {
