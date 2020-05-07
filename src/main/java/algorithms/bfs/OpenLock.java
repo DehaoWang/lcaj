@@ -259,9 +259,9 @@ public class OpenLock {
             return 0;
         }
         Set<String> visited = new HashSet<>();
-        int depth = 0;
         Set<String> queueF = new HashSet<>();
         Set<String> queueB = new HashSet<>();
+        int depth = 0;
 
         queueF.add(source);
         queueB.add(target);

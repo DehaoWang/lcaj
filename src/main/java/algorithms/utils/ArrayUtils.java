@@ -209,4 +209,10 @@ public class ArrayUtils {
         swap(nums, right, r);
         return l;
     }
+
+    public static int[] copy(int[] curr) {
+        int[] copy = new int[curr.length];
+        System.arraycopy(curr, 0, copy, 0, curr.length);
+        return copy;
+    }
 }

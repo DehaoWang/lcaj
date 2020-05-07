@@ -11,18 +11,22 @@ public class QuickSort {
 
 
         ArrayUtils.printArray(nums);
-        quickSort(nums, 0, nums.length - 1);
+        quickSort(nums);
         ArrayUtils.printArray(nums);
     }
 
-    public static void quickSort(int[] nums, int left, int right) {
+    public static void quickSort(int[] nums) {
+        quickSortRecursive(nums, 0, nums.length - 1);
+    }
+
+    public static void quickSortRecursive(int[] nums, int left, int right) {
         if (nums == null || nums.length <= 1) {
             return;
         }
         if (left < right) {
             int m = ArrayUtils.partitionL(nums, left, right);
-            quickSort(nums, left, m - 1);
-            quickSort(nums, m + 1, right);
+            quickSortRecursive(nums, left, m - 1);
+            quickSortRecursive(nums, m + 1, right);
         }
     }
 }
