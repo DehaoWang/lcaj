@@ -70,12 +70,12 @@ public class SudokuSolver {
         return true;
     }
 
-    private static boolean isValidSudokuLocal(char[][] board, int row, int col, int c) {
+    private static boolean isValidSudokuLocal(char[][] board, int row, int col, int n) {
         for (int i = 0; i < 9; i++) {
-            if (board[i][col] != '.' && board[i][col] == c) return false; //check row
-            if (board[row][i] != '.' && board[row][i] == c) return false; //check column
+            if (board[i][col] != '.' && board[i][col] == n) return false; //check row
+            if (board[row][i] != '.' && board[row][i] == n) return false; //check column
             if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] != '.' &&
-                    board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) return false; //check 3*3 block
+                    board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == n) return false; //check 3*3 block
         }
         return true;
     }

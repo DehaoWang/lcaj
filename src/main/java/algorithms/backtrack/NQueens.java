@@ -55,109 +55,109 @@ public class NQueens {
         }
     }
 
-    public boolean isValid() {
-        return isValidHor() && isValidVer() && isValidDiaTL2BR() && isValidDiaTR2BL();
-    }
-
-    public boolean isValidHor() {
-        // horizontally check
-        int height = board.length;
-        int width = board[0].length;
-        for (int i = 0; i < height; i++) {
-            int count = 0;
-            for (int j = 0; j < width; j++) {
-                if (board[i][j] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean isValidVer() {
-        // vertically check
-        int height = board.length;
-        int width = board[0].length;
-        for (int j = 0; j < height; j++) {
-            int count = 0;
-            for (int i = 0; i < width; i++) {
-                if (board[i][j] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean isValidDiaTL2BR() {
-        // Diagonally check: TopLeft - BottomRight
-        int height = board.length;
-        int width = board[0].length;
-        for (int i = 0; i < height; i++) {
-            // i, 0
-            int count = 0;
-            for (int k = 0; i + k < height && k < width; k++) {
-                if (board[i + k][k] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-
-        for (int j = 0; j < width; j++) {
-            // 0, j
-            int count = 0;
-            for (int k = 0; k < height && j + k < width; k++) {
-                if (board[k][j + k] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean isValidDiaTR2BL() {
-        // Diagonally check: TopRight - BottomLeft
-        int height = board.length;
-        int width = board[0].length;
-        for (int i = 0; i < height; i++) {
-            // i, 0
-            int count = 0;
-            for (int k = 0; i - k >= 0 && k < width; k++) {
-                if (board[i - k][k] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-
-        for (int j = 0; j < width; j++) {
-            // size-1, j
-            int count = 0;
-            for (int k = 0; height - 1 - k >= 0 && j + k < width; k++) {
-                if (board[height - 1 - k][j + k] == 1) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                return false;
-            }
-        }
-        return true;
-    }
+//    public boolean isValid() {
+//        return isValidHor() && isValidVer() && isValidDiaTL2BR() && isValidDiaTR2BL();
+//    }
+//
+//    public boolean isValidHor() {
+//        // horizontally check
+//        int height = board.length;
+//        int width = board[0].length;
+//        for (int i = 0; i < height; i++) {
+//            int count = 0;
+//            for (int j = 0; j < width; j++) {
+//                if (board[i][j] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public boolean isValidVer() {
+//        // vertically check
+//        int height = board.length;
+//        int width = board[0].length;
+//        for (int j = 0; j < height; j++) {
+//            int count = 0;
+//            for (int i = 0; i < width; i++) {
+//                if (board[i][j] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public boolean isValidDiaTL2BR() {
+//        // Diagonally check: TopLeft - BottomRight
+//        int height = board.length;
+//        int width = board[0].length;
+//        for (int i = 0; i < height; i++) {
+//            // i, 0
+//            int count = 0;
+//            for (int k = 0; i + k < height && k < width; k++) {
+//                if (board[i + k][k] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//
+//        for (int j = 0; j < width; j++) {
+//            // 0, j
+//            int count = 0;
+//            for (int k = 0; k < height && j + k < width; k++) {
+//                if (board[k][j + k] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public boolean isValidDiaTR2BL() {
+//        // Diagonally check: TopRight - BottomLeft
+//        int height = board.length;
+//        int width = board[0].length;
+//        for (int i = 0; i < height; i++) {
+//            // i, 0
+//            int count = 0;
+//            for (int k = 0; i - k >= 0 && k < width; k++) {
+//                if (board[i - k][k] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//
+//        for (int j = 0; j < width; j++) {
+//            // size-1, j
+//            int count = 0;
+//            for (int k = 0; height - 1 - k >= 0 && j + k < width; k++) {
+//                if (board[height - 1 - k][j + k] == 1) {
+//                    count++;
+//                }
+//            }
+//            if (count > 1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
     public boolean validPos(int[][] board, int r, int c) {
         int width = board[0].length;
