@@ -38,6 +38,23 @@ public class BstOperations {
         insertIntoBST(root7, 7);
         TreeUtils.bfsTraversal(root7);
         TreeUtils.morrisInOrderTraversal(root7);
+
+        TreeNode root1 = new TreeNode(4);
+        root1.left = new TreeNode(3);
+        root1.left.left = new TreeNode(6);
+        root1.right = new TreeNode(5);
+        root1.right.right = new TreeNode(2);
+        TreeUtils.inorderTraversal(root1);
+//        recoverTree(root1);
+        TreeUtils.inorderTraversal(root1);
+
+        TreeNode root2 = new TreeNode(3);
+        root2.left = new TreeNode(1);
+        root2.right = new TreeNode(4);
+        root2.right.left = new TreeNode(2);
+        TreeUtils.inorderTraversal(root2);
+        recoverTree(root2);
+        TreeUtils.inorderTraversal(root2);
     }
 
     public static void plusX(TreeNode root, int x) {
@@ -106,5 +123,37 @@ public class BstOperations {
     public static TreeNode deleteFromBST(TreeNode root, int val) {
         // TODO: 2020-05-05
         return null;
+    }
+
+    // swap to fix mistake
+    static TreeNode prev = new TreeNode(Integer.MIN_VALUE);
+    static TreeNode fir = null;
+    static TreeNode sec = null;
+
+    public static void recoverTree(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        traverseInorder(root);
+        int temp = fir.val;
+        fir.val = sec.val;
+        sec.val = temp;
+    }
+
+    public static void traverseInorder(TreeNode curr) {
+        if (curr == null) {
+            return;
+        }
+        traverseInorder(curr.left);
+
+        if (prev.val > curr.val) {
+            if (fir == null) {
+                fir = prev;
+            }
+            sec = curr;
+        }
+        prev = curr;
+
+        traverseInorder(curr.right);
     }
 }
