@@ -126,4 +126,30 @@ public class StringUtils {
         }
         return true;
     }
+
+    public static String arr2Str(int[] arr) {
+        String res = "";
+        for (int i : arr) {
+            res += i;
+        }
+        return res;
+    }
+
+    public static String copy(String str) {
+        String copy = "";
+        for (Character c : str.toCharArray()) {
+            copy += c;
+        }
+        return copy;
+    }
+
+    public static String reverseByIndices(String str, int l, int r) {
+        String rev = "";
+        char[] chars = str.toCharArray();
+        ArrayUtils.reverseByIndices(chars, l, r);
+        for (char c : chars) {
+            rev += c;
+        }
+        return rev;
+    }
 }

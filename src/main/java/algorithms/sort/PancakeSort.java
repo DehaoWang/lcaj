@@ -1,21 +1,30 @@
 package algorithms.sort;
 
 import algorithms.utils.ArrayUtils;
+import algorithms.utils.StringUtils;
 
 import java.util.*;
 
 public class PancakeSort {
     public static void main(String[] args) {
-        int[] cakes = {3, 2, 4, 1};
+        int[] cakes = {3, 2, 4, 5, 7, 6, 1};
         System.out.println(pancakeSort(cakes));
 
-        int[] cakes2 = {3, 2, 4, 1};
+        int[] cakes2 = {3, 2, 4, 5, 7, 6, 1};
         System.out.println(pancakeSortMinOpsBFS(cakes2));
 
-        int[] cakes3 = {3, 2, 4, 1};
+        int[] cakes3 = {3, 2, 4, 5, 7, 6, 1};
 //        QuickSort.quickSort(cakes3);
 //        ArrayUtils.printArray(cakes3);
         System.out.println(pancakeSortMinOps2WayBFS(cakes3));
+
+//        int[] arr0 = {1, 2, 3, 4};
+//        System.out.println(StringUtils.arr2Str(arr0));
+//        int[] arr1 = {1, 2, 3, 4};
+//        Set<int[]> set = new HashSet<>();
+//        set.add(arr0);
+//        System.out.println(set.contains(arr0));
+//        System.out.println(set.contains(arr1));
     }
 
     public static List<Integer> pancakeSort(int[] cakes) {
@@ -97,26 +106,27 @@ public class PancakeSort {
         if (ascending(cakes)) {
             return 0;
         }
-        int[] source = cakes;
-        int[] target = ArrayUtils.copy(cakes);
-        QuickSort.quickSort(target);
+        String source = StringUtils.arr2Str(cakes);
+        int[] targetCakes = ArrayUtils.copy(cakes);
+        QuickSort.quickSort(targetCakes);
+        String target = StringUtils.arr2Str(targetCakes);
 
-        Set<int[]> visited = new HashSet<>();
-        Set<int[]> queueF = new HashSet<>();
-        Set<int[]> queueB = new HashSet<>();
+        Set<String> visited = new HashSet<>();
+        Set<String> queueF = new HashSet<>();
+        Set<String> queueB = new HashSet<>();
         queueF.add(source);
         queueB.add(target);
         int depth = 0;
 
         while (!queueF.isEmpty() && !queueB.isEmpty()) {
-            Set<int[]> temp;
+            Set<String> temp;
             if (queueF.size() > queueB.size()) {
                 temp = queueF;
                 queueF = queueB;
                 queueB = temp;
             }
             temp = new HashSet<>();
-            for (int[] curr : queueF) {
+            for (String curr : queueF) {
                 if (visited.contains(curr)) {
                     continue;
                 }
@@ -124,8 +134,8 @@ public class PancakeSort {
                 if (queueB.contains(curr)) {
                     return depth;
                 }
-                List<int[]> options = generate(curr);
-                for (int[] option : options) {
+                List<String> options = generate(curr);
+                for (String option : options) {
                     temp.add(option);
                 }
             }
@@ -135,5 +145,15 @@ public class PancakeSort {
             queueB = temp;
         }
         return -1;
+    }
+
+    public static List<String> generate(String curr) {
+        List<String> res = new ArrayList<>();
+        for (int i = 1; i < curr.length(); i++) {
+            String copy = StringUtils.copy(curr);
+            String rev = StringUtils.reverseByIndices(copy, 0, i);
+            res.add(rev);
+        }
+        return res;
     }
 }
