@@ -14,17 +14,18 @@ public class PancakeSort {
         System.out.println(pancakeSortMinOpsBFS(cakes2));
 
         int[] cakes3 = {3, 2, 4, 5, 7, 6, 1};
-//        QuickSort.quickSort(cakes3);
-//        ArrayUtils.printArray(cakes3);
         System.out.println(pancakeSortMinOps2WayBFS(cakes3));
 
-//        int[] arr0 = {1, 2, 3, 4};
-//        System.out.println(StringUtils.arr2Str(arr0));
-//        int[] arr1 = {1, 2, 3, 4};
-//        Set<int[]> set = new HashSet<>();
-//        set.add(arr0);
-//        System.out.println(set.contains(arr0));
-//        System.out.println(set.contains(arr1));
+        int[] cakes4 = {3, 2, 4, 5, 7, 6, 1};
+        System.out.println(pancakeSortLC(cakes4));
+
+
+        // dp attempt
+        int[] cakes5 = {3, 2, 4, 1, 7, 6, 5};
+        System.out.println(pancakeSortMinOpsBFS(cakes5));
+
+        int[] cakes6 = {3, 2, 4, 1, 7, 6, 5};
+        System.out.println(pancakeSortMinOps2WayBFS(cakes6));
     }
 
     public static List<Integer> pancakeSort(int[] cakes) {
@@ -54,7 +55,8 @@ public class PancakeSort {
 
     // dp vs bfs?
 
-    public static List<Integer> pancakeSortMinOps(int[] cakes) {
+    public static List<Integer> pancakeSortMinOpsDP(int[] cakes) {
+        // TODO: 2020-05-09 dp impls
         List<Integer> res = new ArrayList<>();
 //        pancakeSortMinOpsBFS(res, cakes);
         return res;
@@ -155,5 +157,25 @@ public class PancakeSort {
             res.add(rev);
         }
         return res;
+    }
+
+    public static List<Integer> pancakeSortLC(int[] A) {
+        List<Integer> ans = new ArrayList();
+        int N = A.length;
+
+        Integer[] B = new Integer[N];
+        for (int i = 0; i < N; ++i)
+            B[i] = i + 1;
+        Arrays.sort(B, (i, j) -> A[j - 1] - A[i - 1]);
+
+        for (int i : B) {
+            for (int f : ans)
+                if (i <= f)
+                    i = f + 1 - i;
+            ans.add(i);
+            ans.add(N--);
+        }
+
+        return ans;
     }
 }
