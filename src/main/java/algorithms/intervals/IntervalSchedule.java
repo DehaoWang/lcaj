@@ -21,11 +21,17 @@ public class IntervalSchedule {
 
     }
 
+    // TODO: 2020-05-16 interval problems:
+    //  template for getting Disjoint / Merged Intervals
+    //  Intersect Intervals √
+
+
 
     public static int intervalScheduleSortEndsToSeparate(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {
             return 0;
-        }        // 按 end 升序排序
+        }
+        // 按 end 升序排序
         Arrays.sort(intervals, new Comparator<int[]>() {
             public int compare(int[] a, int[] b) {
                 return a[1] - b[1];
@@ -50,7 +56,8 @@ public class IntervalSchedule {
     public static int intervalScheduleSortStartsToSeparate(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {
             return 0;
-        }        // 按 end 升序排序
+        }
+        // 按 start 升序排序
         Arrays.sort(intervals, new Comparator<int[]>() {
             public int compare(int[] a, int[] b) {
                 return a[0] - b[0];
@@ -97,7 +104,7 @@ public class IntervalSchedule {
                 start = currS;
                 end = currE;
             } else {
-                start = Math.min(start, currS);
+//                start = Math.min(start, currS);
                 end = Math.max(end, currE);
             }
         }
@@ -109,7 +116,6 @@ public class IntervalSchedule {
         return res;
     }
 
-    // TODO: 2020-05-15
     public static int[][] intervalScheduleSortEndsToMerge(int[][] intervals) {
         List<int[]> resList = new ArrayList<>();
         if (intervals == null || intervals.length == 0) {
@@ -138,7 +144,7 @@ public class IntervalSchedule {
                 end = currE;
             } else {
                 start = Math.min(start, currS);
-                end = Math.max(end, currE);
+//                end = Math.max(end, currE);
             }
         }
         resList.add(new int[]{start, end});
