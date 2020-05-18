@@ -1,5 +1,7 @@
 package algorithms.utils;
 
+import java.util.Random;
+
 /**
  * Created by wangdehao on 18/11/15.
  */
@@ -214,5 +216,31 @@ public class ArrayUtils {
         int[] copy = new int[curr.length];
         System.arraycopy(curr, 0, copy, 0, curr.length);
         return copy;
+    }
+
+    // 洗牌算法
+    public static void shuffle(int[] arr) {
+        int n = arr.length;
+        /******** 区别只有这两行 ********/
+        for (int i = 0; i < n; i++) {
+            // 从 i 到最后随机选一个元素
+            int rand = randInRange(i, n - 1);
+            /*************************/
+            swap(arr, i, rand);
+        }
+    }
+
+    public static int randInRange(int lb, int ub) {
+        Random random = new Random();
+        int rand = random.nextInt(ub + 1 - lb);
+        return lb + rand;
+    }
+
+    public static String cardStr(int[] arr) {
+        String cs = "";
+        for (int i = 0; i < arr.length; i++) {
+            cs += arr[i];
+        }
+        return cs;
     }
 }

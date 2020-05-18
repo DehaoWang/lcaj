@@ -193,7 +193,7 @@ public class IntervalSchedule {
         int[][] intervals = points;
         if (intervals.length == 0) return 0;
         // 按 end 升序排序
-        Arrays.sort(intervals, new Comparator<int[]>() {
+        Arrays.sort(intervals, new Comparator<>() {
             public int compare(int[] a, int[] b) {
                 return a[1] - b[1];
             }
