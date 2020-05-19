@@ -243,4 +243,22 @@ public class ArrayUtils {
         }
         return cs;
     }
+
+    public static int[] minimax(int[] arr) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int n : arr) {
+            min = Math.min(min, n);
+            max = Math.max(max, n);
+        }
+        return new int[]{min, max};
+    }
+
+    public static int summary(int[] arr) {
+        int sum = 0;
+        for (int n : arr) {
+            sum += n;
+        }
+        return sum;
+    }
 }

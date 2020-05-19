@@ -1,4 +1,4 @@
-package interview.tbc;
+package interview.archive;
 
 import algorithms.utils.TreeUtils;
 import datastructures.basic.tree.TreeNode;
@@ -6,7 +6,7 @@ import datastructures.basic.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Coding {
+public class CodingSmartNews {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(0);
