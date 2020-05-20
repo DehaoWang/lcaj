@@ -1,7 +1,5 @@
 package datastructures.advanced.stackNqueue;
 
-import algorithms.utils.ArrayUtils;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 
