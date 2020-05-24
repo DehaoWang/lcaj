@@ -1,5 +1,7 @@
 package com.lcaj.lc42;
 
+import static algorithms.faq.TrappingRainWater.trapTwoPointers;
+
 public class TrappingRainWater {
 
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class TrappingRainWater {
         };
         for (int[] height : heights) {
             System.out.println(trap(height));
+            System.out.println(trapTwoPointers(height));
         }
     }
 
