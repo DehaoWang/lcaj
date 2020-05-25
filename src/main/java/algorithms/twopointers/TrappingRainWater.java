@@ -1,4 +1,4 @@
-package algorithms.faq;
+package algorithms.twopointers;
 
 public class TrappingRainWater {
     public static void main(String[] args) {

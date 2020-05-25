@@ -1,6 +1,6 @@
 package com.lcaj.lc42;
 
-import static algorithms.faq.TrappingRainWater.trapTwoPointers;
+import static algorithms.twopointers.TrappingRainWater.trapTwoPointers;
 
 public class TrappingRainWater {
 

@@ -2,8 +2,8 @@ package algorithms.dynamicprogramming;
 
 public class CoinChange {
     public static void main(String[] args) {
-        int amount = 41;
-        int[] coins = {1, 2, 5};
+        int amount = 11;
+        int[] coins = {1, 4, 5};
 
         long t0 = System.currentTimeMillis();
 
@@ -41,7 +41,7 @@ public class CoinChange {
         if (n <= 1) {
             return n;
         }
-        if(memo[n] != 0){
+        if (memo[n] != 0) {
             return memo[n];
         }
         int min = n;
@@ -58,19 +58,19 @@ public class CoinChange {
 
     public static int coinChangeDP(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
-
+        for (int i = 0; i < dp.length; i++) {
+            dp[i] = Integer.MAX_VALUE;
+        }
         dp[0] = 0;
-        for (int i = 1; i <= amount; i++) {
-            int min = Integer.MAX_VALUE;
+        for (int i = 1; i < dp.length; i++) {
             for (int coin : coins) {
                 int left = i - coin;
                 if (left < 0) {
                     continue;
                 } else {
-                    min = Math.min(min, 1 + dp[left]);
+                    dp[i] = Math.min(dp[i], 1 + dp[left]);
                 }
             }
-            dp[i] = min;
         }
         return dp[amount];
     }
