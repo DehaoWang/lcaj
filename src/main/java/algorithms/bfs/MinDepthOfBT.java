@@ -5,7 +5,7 @@ import datastructures.basic.tree.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static com.lcaj.lc111.MinDepthOfBT.minDepth;
+import static leetcode.lc111.MinDepthOfBT.minDepth;
 
 public class MinDepthOfBT {
     public static void main(String[] args) {
