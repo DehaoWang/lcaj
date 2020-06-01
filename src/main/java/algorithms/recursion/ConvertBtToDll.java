@@ -162,18 +162,11 @@ public class ConvertBtToDll {
     private static TreeNode first = null;
     private static TreeNode last = null;
 
-    public static void transformBtToDll2(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        helper(root);
-    }
-
-    public static void helper(TreeNode curr) {
+    public static void transformBtToDll2(TreeNode curr) {
         if (curr == null) {
             return;
         }
-        helper(curr.left);
+        transformBtToDll2(curr.left);
         if (last == null) {
             first = curr;
         } else {
@@ -181,6 +174,6 @@ public class ConvertBtToDll {
             curr.left = last;
         }
         last = curr;
-        helper(curr.right);
+        transformBtToDll2(curr.right);
     }
 }
