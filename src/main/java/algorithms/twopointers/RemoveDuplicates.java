@@ -15,7 +15,6 @@ public class RemoveDuplicates {
             if (nums[fast] != nums[slow]) {
                 slow++;
                 nums[slow] = nums[fast];
-//                slow++;
             }
             fast++;
         }

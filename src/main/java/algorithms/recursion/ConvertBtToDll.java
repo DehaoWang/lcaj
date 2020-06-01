@@ -44,6 +44,32 @@ public class ConvertBtToDll {
             System.out.print(tail.val + " -> ");
             tail = tail.left;
         }
+
+        System.out.println();
+
+        TreeNode root3 = new TreeNode(4);
+        root3.left = new TreeNode(2);
+        root3.right = new TreeNode(6);
+        root3.left.left = new TreeNode(1);
+        root3.left.right = new TreeNode(3);
+        root3.right.left = new TreeNode(5);
+        root3.right.right = new TreeNode(7);
+
+        transformBtToDll2(root3);
+
+        while (first != null) {
+            System.out.print(first.val + " -> ");
+            first = first.right;
+        }
+        System.out.println();
+
+
+        while (last != null) {
+            System.out.print(last.val + " -> ");
+            last = last.left;
+        }
+        System.out.println();
+
     }
 
     public static DoublyLinkedList convertBtToDll(TreeDllNode root) {
@@ -131,5 +157,30 @@ public class ConvertBtToDll {
             ans[1] = rightDll[1];
         }
         return ans;
+    }
+
+    private static TreeNode first = null;
+    private static TreeNode last = null;
+
+    public static void transformBtToDll2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        helper(root);
+    }
+
+    public static void helper(TreeNode curr) {
+        if (curr == null) {
+            return;
+        }
+        helper(curr.left);
+        if (last == null) {
+            first = curr;
+        } else {
+            last.right = curr;
+            curr.left = last;
+        }
+        last = curr;
+        helper(curr.right);
     }
 }

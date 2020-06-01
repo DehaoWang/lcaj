@@ -23,6 +23,13 @@ public class ReverseList {
         ListNode.printListNode(head3);
         head3 = reverseMN(head3, 2, 4);
         ListNode.printListNode(head3);
+
+
+        ListNode head4 = ListNode.getListFromArray(new int[]{1, 2, 3, 4, 5, 6});
+        ListNode.printListNode(head4);
+        head4 = reverseKGroup(head4, 2);
+        ListNode.printListNode(head4);
+
     }
 
     public static ListNode reverseList(ListNode head) {
@@ -60,5 +67,57 @@ public class ReverseList {
         }
         head.next = reverseMN(head.next, m - 1, n - 1);
         return head;
+    }
+
+    public static ListNode reverse(ListNode a) {
+        ListNode pred, curr, next;
+        pred = null;
+        curr = a;
+        next = a;
+        while (curr != null) {
+            next = curr.next;
+            // 逐个结点反转
+            curr.next = pred;
+            // 更新指针位置
+            pred = curr;
+            curr = next;
+        }
+        // 返回反转后的头结点
+        return pred;
+    }
+
+    public static ListNode reverse(ListNode a, ListNode b) {
+        ListNode pred, curr, next;
+        pred = null;
+        curr = a;
+        next = a;
+        while (curr != b) {
+            next = curr.next;
+            // 逐个结点反转
+            curr.next = pred;
+            // 更新指针位置
+            pred = curr;
+            curr = next;
+        }
+        // 返回反转后的头结点
+        return pred;
+    }
+
+
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null) return null;
+        // 区间 [a, b) 包含 k 个待反转元素
+        ListNode a, b;
+        a = b = head;
+        for (int i = 0; i < k; i++) {
+            // 不足 k 个，不需要反转，base case
+            if (b == null) return head;
+            b = b.next;
+        }
+        // 反转前 k 个元素
+        ListNode newHead = reverse(a, b);
+        // 递归反转后续链表并连接起来
+        a.next = reverseKGroup(b, k);
+        return newHead;
     }
 }
