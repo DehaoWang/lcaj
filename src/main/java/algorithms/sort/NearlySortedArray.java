@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 public class NearlySortedArray {
     public static void main(String[] args) {
         int[] nums = {4, 3, 2, 1, 5, 7, 6};
-        ArrayUtils.printArray(conditionalSort(nums, 2));
+        ArrayUtils.printArray(conditionalSort(nums, 3));
     }
 
     public static int[] conditionalSort(int[] nums, int k) {

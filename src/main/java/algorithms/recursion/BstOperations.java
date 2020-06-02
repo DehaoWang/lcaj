@@ -88,13 +88,11 @@ public class BstOperations {
         if (root == null) {
             return true;
         }
-        if (root.val <= min) {
+        if (root.val <= min || root.val >= max) {
             return false;
         }
-        if (root.val >= max) {
-            return false;
-        }
-        return isValidBSTRecursive(root.left, min, root.val) && isValidBSTRecursive(root.right, root.val, max);
+        return isValidBSTRecursive(root.left, min, root.val)
+                && isValidBSTRecursive(root.right, root.val, max);
     }
 
     public static boolean isInBST(TreeNode root, int target) {

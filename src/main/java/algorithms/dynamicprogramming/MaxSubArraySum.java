@@ -17,7 +17,7 @@ public class MaxSubArraySum {
             if (thisSum < 0) {
                 thisSum = 0;
             }
-            maxSum = thisSum > maxSum ? thisSum : maxSum;
+            maxSum = Math.max(maxSum, thisSum);
         }
         return maxSum;
     }

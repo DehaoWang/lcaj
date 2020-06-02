@@ -14,11 +14,11 @@ public class BTDFS {
         root6.right.left = new TreeNode(5);
         root6.right.right = new TreeNode(7);
 
-//        System.out.println(binaryTreeDFS(root6));
-//
-//        List<Integer> res = new ArrayList<>();
-//        binaryTreeRecDFS(root6, res);
-//        System.out.println(res);
+        System.out.println(binaryTreeDFS(root6));
+
+        List<Integer> res = new ArrayList<>();
+        binaryTreeRecDFS(root6, res);
+        System.out.println(res);
 
         System.out.println(binaryTreeInorderStack(root6));
     }
