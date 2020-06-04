@@ -4,6 +4,8 @@ import algorithms.utils.MatrixUtils;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestIncSeq {
     public static void main(String[] args) {
@@ -16,7 +18,14 @@ public class LongestIncSeq {
 
         int[][] envelopes = {{5, 4}, {6, 4}, {6, 7}, {2, 3}};
         int[][] envelopes1 = {{1, 2}, {2, 3}, {3, 4}, {3, 5}, {4, 5}, {5, 5}, {5, 6}, {6, 7}, {7, 8}};
+        int[][] envelopes2 = {{1, 2}, {2, 100}, {3, 4}, {3, 5}, {4, 5}, {5, 5}, {5, 6}, {6, 7}, {7, 8}};
         System.out.println(maxEnvelopes(envelopes1));
+        System.out.println(yySolution(envelopes1));
+        System.out.println(maxEnvelopes(envelopes));
+        System.out.println(yySolution(envelopes));
+
+        System.out.println(maxEnvelopes(envelopes2));
+        System.out.println(yySolution(envelopes2));
     }
 
     public static int longestIncSeq(int[] nums) {
@@ -133,7 +142,7 @@ public class LongestIncSeq {
                 }
             }
         });
-        MatrixUtils.printMatrix(envelopes);
+//        MatrixUtils.printMatrix(envelopes);
         int[] tails = new int[envelopes.length];
         int maxLen = 0;
         int curr = -1;
@@ -157,5 +166,40 @@ public class LongestIncSeq {
             }
         }
         return maxLen;
+    }
+
+    // coding interview for yy
+    public static int yySolution(int[][] envelopes) {
+        Arrays.sort(envelopes, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                if (a[0] != b[0]) {
+                    return a[0] - b[0];
+                } else {
+                    return a[1] - b[1];
+                }
+            }
+        });
+        int ans = 0;
+        Set<Integer> visited = new HashSet<>();
+        for (int i = 0; i < envelopes.length; i++) {
+            int[] cur = envelopes[i];
+            if (!visited.contains(cur)) {
+                visited.add(i);
+            } else {
+                continue;
+            }
+            int one_ans = 1;
+            for (int j = i + 1; j < envelopes.length; j++) {
+                int[] nxt = envelopes[j];
+                if (nxt[0] > cur[0] && nxt[1] > cur[1]) {
+                    one_ans++;
+                    cur = nxt;
+                    visited.add(j);
+                }
+            }
+            ans = Math.max(ans, one_ans);
+        }
+        return ans;
     }
 }
