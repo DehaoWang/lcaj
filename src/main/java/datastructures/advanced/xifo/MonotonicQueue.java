@@ -1,4 +1,4 @@
-package datastructures.advanced.stackNqueue;
+package datastructures.advanced.xifo;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

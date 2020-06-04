@@ -1,4 +1,4 @@
-package datastructures.advanced.stackNqueue;
+package datastructures.advanced.xifo;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package algorithms.faq;
+package algorithms.bitoperations;
 
 import algorithms.utils.ArrayUtils;
 

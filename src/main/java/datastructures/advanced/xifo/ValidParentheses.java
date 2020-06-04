@@ -1,4 +1,4 @@
-package algorithms.faq;
+package datastructures.advanced.xifo;
 
 import java.util.Stack;
 
