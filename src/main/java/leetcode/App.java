@@ -1,5 +1,6 @@
 package leetcode;
 
+import algorithms.twopointers.LongestPalindromicSub;
 import datastructures.basic.graph.Graph;
 import algorithms.utils.ArrayUtils;
 import algorithms.utils.GraphUtils;
@@ -15,15 +16,22 @@ public class App {
     public static void main(String[] args) throws IOException {
 
 
-//        String[][] srcTgts = {{"ababababca", "abababca"}};
-//        for (int i = 0; i < srcTgts.length; i++) {
-//            String src = srcTgts[i][0];
-//            String tgt = srcTgts[i][1];
-//            System.out.println("Sys res = " + src.indexOf(tgt));
-//            System.out.println("spm res = " + StringUtils.simplePatternMatching(src, tgt));
-//            System.out.println("spm2 res = " + StringUtils.simplePatternMatching2(src, tgt));
-//            System.out.println("kmp res = " + StringUtils.kmpPatternMatching(src, tgt));
-//        }
+        String[][] srcTgts = {{"ababababca", "abababca"}};
+        for (int i = 0; i < srcTgts.length; i++) {
+            String src = srcTgts[i][0];
+            String tgt = srcTgts[i][1];
+            System.out.println("Sys res = " + src.indexOf(tgt));
+            System.out.println("spm res = " + StringUtils.simplePatternMatching(src, tgt));
+            System.out.println("spm2 res = " + StringUtils.simplePatternMatching2(src, tgt));
+            System.out.println("kmp res = " + StringUtils.kmpPatternMatching(src, tgt));
+        }
+
+        String[] palindromes = {"babad", "abababca"};
+        for (String palin : palindromes) {
+            System.out.println("dp res = " + LongestPalindromicSub.longestPalindromicSub2(palin));
+            System.out.println("manacher res = " + StringUtils.manacherPalindromicTesting(palin));
+        }
+
 //
 //        String verticesStr = "A,B,C,D,E,F,G,H,I";
 //        String edgesStr = "A-B,A-F,B-C,B-I,B-G,C-D,C-I,D-E,D-H,D-G,D-I,E-F,E-H,F-G,G-H";
