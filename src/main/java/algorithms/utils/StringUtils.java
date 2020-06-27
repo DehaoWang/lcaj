@@ -4,31 +4,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StringUtils {
-    public static int simplePatternMatching(String s, String t) {
-        if (s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) {
-            return -1;
-        }
-        char[] charS = s.toCharArray();
-        char[] charT = t.toCharArray();
-        int i = 0, j = 0;
-        while (i < charS.length && j < charT.length) {
-            int k = i;
-            while (k < i + charT.length) {
-                if (charS[k] != charT[j]) {
-                    break;
-                } else {
-                    k++;
-                    j++;
-                }
-            }
-            if (k == i + charT.length) {
-                return i;
-            }
-            i++;
-            j = 0;
-        }
-        return -1;
-    }
+//    public static int simplePatternMatching(String s, String t) {
+//        if (s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) {
+//            return -1;
+//        }
+//        char[] charS = s.toCharArray();
+//        char[] charT = t.toCharArray();
+//        int i = 0, j = 0;
+//        while (i < charS.length && j < charT.length) {
+//            int k = i;
+//            while (k < i + charT.length) {
+//                if (charS[k] != charT[j]) {
+//                    break;
+//                } else {
+//                    k++;
+//                    j++;
+//                }
+//            }
+//            if (k == i + charT.length) {
+//                return i;
+//            }
+//            i++;
+//            j = 0;
+//        }
+//        return -1;
+//    }
 
     // if unequal, i goes back to next, j goes back to 0
     public static int simplePatternMatching2(String s, String t) {
@@ -62,7 +62,7 @@ public class StringUtils {
         char[] charS = s.toCharArray();
         char[] charT = t.toCharArray();
         int[] next = getNext(charT);
-        ArrayUtils.printArray(next);
+//        ArrayUtils.printArray(next);
         int i = 0, j = 0;
         while (i < charS.length && j < charT.length) {
             if (j == -1 || charS[i] == charT[j]) {
@@ -95,6 +95,52 @@ public class StringUtils {
         return next;
     }
 
+    public static int rkPatternMatching(String s, String t) {
+        int tLen = t.length();
+        int sLen = s.length();
+        int h = 1;
+
+        int tHashcode = rkHashCode(t);
+        int sHashcode = rkHashCode(s.substring(0, tLen));
+
+//        int tHashcode = 0;
+//        int sHashcode = 0;
+//        for (int i = 0; i < tLen; i++) {
+//            tHashcode = (base * tHashcode + t.charAt(i)) % mod;
+//            sHashcode = (base * sHashcode + s.charAt(i)) % mod;
+//        }
+
+        for (int i = 0; i < tLen - 1; i++) {
+            h = (h * base) % mod;
+        }
+
+        for (int i = 0; i <= sLen - tLen; i++) {
+            if (sHashcode == tHashcode && s.substring(i, i + tLen).equals(t)) {
+                return i;
+            } else {
+                if (i < sLen - tLen) {
+                    sHashcode = (base * (sHashcode - s.charAt(i) * h) + s.charAt(i + tLen)) % mod;
+                }
+                if (sHashcode < 0) {
+                    sHashcode += mod;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    private static int base = 256;
+    private static int mod = 101;
+
+    public static int rkHashCode(String t) {
+        int hc = 0;
+        for (int i = 0; i < t.length(); i++) {
+            hc = (hc * base + t.charAt(i))%mod;
+        }
+        return hc ;
+    }
+
     public static Map<Character, Integer> getStrMap(String t) {
         Map<Character, Integer> strMap = new HashMap<>();
         char[] ca = t.toCharArray();
@@ -102,6 +148,31 @@ public class StringUtils {
             strMap.put(c, strMap.getOrDefault(c, 0) + 1);
         }
         return strMap;
+    }
+
+    public static String getAnagramEncoding(String t) {
+        int[] count = new int[26];
+        for (char c : t.toCharArray()) {
+            count[c - 'a']++;
+        }
+        StringBuilder sb = new StringBuilder("");
+        for (int i = 0; i < 26; i++) {
+            sb.append('#');
+            sb.append(count[i]);
+        }
+        return sb.toString();
+    }
+
+    static int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
+            71, 73, 79, 83, 89, 97, 101};
+
+    public static int myHashCode(String s) {
+//        System.out.println(primes.length);
+        int hash = 1;
+        for (char c : s.toCharArray()) {
+            hash *= primes[c - 'a'];
+        }
+        return hash;
     }
 
     public static boolean cover(Map<Character, Integer> subMap, Map<Character, Integer> tMap) {

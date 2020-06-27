@@ -21,16 +21,24 @@ public class App {
             String src = srcTgts[i][0];
             String tgt = srcTgts[i][1];
             System.out.println("Sys res = " + src.indexOf(tgt));
-            System.out.println("spm res = " + StringUtils.simplePatternMatching(src, tgt));
+//            System.out.println("spm res = " + StringUtils.simplePatternMatching(src, tgt));
             System.out.println("spm2 res = " + StringUtils.simplePatternMatching2(src, tgt));
             System.out.println("kmp res = " + StringUtils.kmpPatternMatching(src, tgt));
+            System.out.println("rk res = " + StringUtils.rkPatternMatching(src, tgt));
         }
+//
+//        String[] palindromes = {"babad", "abababca"};
+//        for (String palin : palindromes) {
+//            System.out.println("dp res = " + LongestPalindromicSub.longestPalindromicSub2(palin));
+//            System.out.println("manacher res = " + StringUtils.manacherPalindromicTesting(palin));
+//        }
 
-        String[] palindromes = {"babad", "abababca"};
-        for (String palin : palindromes) {
-            System.out.println("dp res = " + LongestPalindromicSub.longestPalindromicSub2(palin));
-            System.out.println("manacher res = " + StringUtils.manacherPalindromicTesting(palin));
-        }
+//        System.out.println(StringUtils.rkHashCode("abc"));
+//        String test = "1111111";
+//        System.out.println(test.substring(0, 3));
+//
+//        System.out.println(StringUtils.rkPatternMatching("ababababca", "abababca"));
+
 
 //
 //        String verticesStr = "A,B,C,D,E,F,G,H,I";
@@ -64,27 +72,27 @@ public class App {
 //        ArrayUtils.printArray(heapTest);
 
 
-        int[] cards = {1, 2, 3, 4, 5};
-        System.out.println(ArrayUtils.cardStr(cards));
-        ArrayUtils.shuffle(cards);
-        System.out.println(ArrayUtils.cardStr(cards));
-
-        Map<Integer, Integer> countMap = new HashMap<>();
-        Map<String, Integer> cardsMap = new HashMap<>();
-        for (int i = 0; i < 100000; i++) {
-            ArrayUtils.shuffle(cards);
-            String cs = ArrayUtils.cardStr(cards);
-            cardsMap.put(cs, cardsMap.getOrDefault(cs, 0) + 1);
-            int rand = ArrayUtils.randInRange(0, 4);
-            countMap.put(rand, countMap.getOrDefault(rand, 0) + 1);
-
-        }
-        System.out.println(cardsMap);
-        System.out.println(cardsMap.size());
-
-        System.out.println(countMap);
-
-        System.out.println(ArrayUtils.randInRange(0, 4));
+//        int[] cards = {1, 2, 3, 4, 5};
+//        System.out.println(ArrayUtils.cardStr(cards));
+//        ArrayUtils.shuffle(cards);
+//        System.out.println(ArrayUtils.cardStr(cards));
+//
+//        Map<Integer, Integer> countMap = new HashMap<>();
+//        Map<String, Integer> cardsMap = new HashMap<>();
+//        for (int i = 0; i < 100000; i++) {
+//            ArrayUtils.shuffle(cards);
+//            String cs = ArrayUtils.cardStr(cards);
+//            cardsMap.put(cs, cardsMap.getOrDefault(cs, 0) + 1);
+//            int rand = ArrayUtils.randInRange(0, 4);
+//            countMap.put(rand, countMap.getOrDefault(rand, 0) + 1);
+//
+//        }
+//        System.out.println(cardsMap);
+//        System.out.println(cardsMap.size());
+//
+//        System.out.println(countMap);
+//
+//        System.out.println(ArrayUtils.randInRange(0, 4));
 
     }
 }

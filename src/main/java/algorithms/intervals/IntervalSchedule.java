@@ -10,9 +10,9 @@ import java.util.List;
 public class IntervalSchedule {
     public static void main(String[] args) {
         int[][] intvs = {{1, 3}, {2, 4}, {3, 6}};
-        System.out.println(disjointSortEnds(intvs));
-        System.out.println(disjointSortStarts(intvs));
-        System.out.println(eraseOverlapIntervals(intvs));
+//        System.out.println(disjointSortEnds(intvs));
+//        System.out.println(disjointSortStarts(intvs));
+//        System.out.println(eraseOverlapIntervals(intvs));
 
         int[][] intvs1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         MatrixUtils.printMatrix(unionSortStarts(intvs1));
@@ -21,7 +21,7 @@ public class IntervalSchedule {
 
         int[][] intvsA = {{0, 2}};
         int[][] intvsB = {{1, 5}};
-        MatrixUtils.printMatrix(intervalIntersection(intvsA, intvsB));
+//        MatrixUtils.printMatrix(intervalIntersection(intvsA, intvsB));
 
     }
 
