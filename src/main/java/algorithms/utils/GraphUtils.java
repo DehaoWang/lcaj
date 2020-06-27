@@ -1,6 +1,7 @@
 package algorithms.utils;
 
 import datastructures.basic.graph.Graph;
+import datastructures.basic.graph.Vertex;
 
 import java.util.*;
 
@@ -186,5 +187,60 @@ public class GraphUtils {
 //        ArrayMethods.printArray(distance);
 //        ArrayMethods.printArray(prev);
         return distance;
+    }
+
+    // practice bfs traversal
+    public static List<String> bfsTraversal(Graph graph, int startIndex) {
+        System.out.println("\nbfsTraversalLabelWhenPop starting at vertex: " + graph.getName(startIndex));
+        List<String> bfsSeq = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        Queue<Vertex> queue = new LinkedList<>();
+        Vertex startVertex = graph.getVertexByIndex(startIndex);
+        queue.offer(startVertex);
+        while (!queue.isEmpty()) {
+            Vertex curr = queue.poll();
+            if (!visited.contains(curr.getIndex())) {
+                visited.add(curr.getIndex());
+                bfsSeq.add(curr.getName());
+                Set<Integer> neighbors = curr.getOuterVertices();
+                for (Integer next : neighbors) {
+                    if (!visited.contains(next)) {
+                        queue.offer(graph.getVertexByIndex(next));
+                    }
+                }
+            }
+        }
+        return bfsSeq;
+    }
+
+    public static List<String> bfsTopologicalSort(Graph graph) {
+        List<String> topoSeq = new LinkedList<>();
+        System.out.println("\nbfsTopologicalSort");
+        System.out.println("After");
+        int[] interDegrees = graph.getInterDegrees();
+        ArrayUtils.printArray(interDegrees);
+        Queue<Vertex> queue = new LinkedList<>();
+        for (Vertex vertex : graph.getVertices()) {
+            if (vertex.getInnerDegree() == 0) {
+                queue.offer(vertex);
+            }
+        }
+        System.out.println(queue);
+        // should be all
+//        queue.offer(startVertex);
+        while (!queue.isEmpty()) {
+            Vertex vertex = queue.poll();
+            topoSeq.add(vertex.getName());
+            for (Integer next : vertex.getOuterVertices()) {
+                interDegrees[next]--;
+                if (interDegrees[next] == 0) {
+                    queue.offer(graph.getVertexByIndex(next));
+                }
+            }
+        }
+        System.out.println("After");
+        ArrayUtils.printArray(interDegrees);
+
+        return topoSeq;
     }
 }

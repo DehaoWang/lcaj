@@ -1,5 +1,7 @@
 package datastructures.basic.graph;
 
+import algorithms.utils.ArrayUtils;
+
 import java.util.*;
 
 public class Graph {
@@ -17,6 +19,8 @@ public class Graph {
     Map<String, Integer> vertexName2Index = new HashMap<>();
     Map<Integer, String> index2VertexName = new HashMap<>();
 
+    // for topological sort
+    int[] interDegrees;
 
     public Graph(Set<String> vertices, Set<String> edges, boolean undirected, boolean weighted) {
         this.undirected = undirected;
@@ -73,10 +77,18 @@ public class Graph {
         for (String v : vertices) {
             vertexName2Index.put(v, vIndex);
             index2VertexName.put(vIndex, v);
+
+            // 20200627 OOD
+            Vertex vertex = new Vertex(v, vIndex);
+            index2Vertex.put(vIndex, vertex);
+
             vIndex++;
             System.out.print(String.format("%-3s ", v));
         }
         System.out.println();
+
+        this.interDegrees = new int[numVertices];
+
         // build edges
         for (String e : edges) {
             String[] tokens = e.split(EDGE_DELIMITER_WEIGHT);
@@ -91,8 +103,17 @@ public class Graph {
             if (undirected) {
                 adjacencyMatrix[dstIdx][srcIdx] = weight;
             }
+            // 20200627 OOD
+            Vertex srcVertex = index2Vertex.get(srcIdx);
+            Vertex dstVertex = index2Vertex.get(dstIdx);
+
+            srcVertex.addOuterEdge(dstVertex);
+            dstVertex.addInterEdge(srcVertex);
+
+            interDegrees[dstIdx]++;
         }
         printMatrixForGraph();
+        ArrayUtils.printArray(interDegrees);
 //        Graph(vertices, edges, undirected, weighted);
     }
 
@@ -175,5 +196,19 @@ public class Graph {
             }
             System.out.println();
         }
+    }
+
+    public Vertex getVertexByIndex(int index) {
+        return index2Vertex.get(index);
+    }
+
+    public Collection<Vertex> getVertices() {
+        return index2Vertex.values();
+    }
+
+    public int[] getInterDegrees() {
+        int[] interDegrees = new int[numVertices];
+        System.arraycopy(this.interDegrees, 0, interDegrees, 0, numVertices);
+        return interDegrees;
     }
 }
