@@ -136,9 +136,9 @@ public class StringUtils {
     public static int rkHashCode(String t) {
         int hc = 0;
         for (int i = 0; i < t.length(); i++) {
-            hc = (hc * base + t.charAt(i))%mod;
+            hc = (hc * base + t.charAt(i)) % mod;
         }
-        return hc ;
+        return hc;
     }
 
     public static Map<Character, Integer> getStrMap(String t) {
@@ -325,5 +325,13 @@ public class StringUtils {
             step++;
         }
         return step;
+    }
+
+    public static char[] getStrArr(String s) {
+        char[] arr = new char[26];
+        for (char c : s.toCharArray()) {
+            arr[c - 'A']++;
+        }
+        return arr;
     }
 }
