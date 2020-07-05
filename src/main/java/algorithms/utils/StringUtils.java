@@ -328,7 +328,7 @@ public class StringUtils {
     }
 
     public static char[] getStrArr(String s) {
-        char[] arr = new char[26];
+        char[] arr = new char[128];
         for (char c : s.toCharArray()) {
             arr[c - 'A']++;
         }
