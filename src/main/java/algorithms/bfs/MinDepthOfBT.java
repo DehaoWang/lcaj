@@ -38,6 +38,7 @@ public class MinDepthOfBT {
         root6.right = new TreeNode(4);
         root6.left.left = new TreeNode(1);
         root6.right.right = new TreeNode(5);
+        root6.left.left.left = new TreeNode(0);
 
         System.out.println(minDepth(root6));
         System.out.println(minDepthBFS(root6));
