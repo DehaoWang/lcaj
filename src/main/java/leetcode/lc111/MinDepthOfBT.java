@@ -13,14 +13,24 @@ public class MinDepthOfBT {
         root3.right.left = new TreeNode(15);
         root3.right.right = new TreeNode(7);
         System.out.println(minDepth(root3));
+        System.out.println(minDepth2(root3));
 
         TreeNode root4 = new TreeNode(1);
         root4.left = new TreeNode(2);
         System.out.println(minDepth(root4));
+        System.out.println(minDepth2(root4));
     }
 
     public static int minDepth(TreeNode root) {
         return minDepthRecursive(root);
+    }
+
+    public static int minDepth2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else {
+            return Math.min(minDepth2(root.left), minDepth2(root.right)) + 1;
+        }
     }
 
     public static int minDepthRecursive(TreeNode root) {
@@ -31,10 +41,9 @@ public class MinDepthOfBT {
         } else {
             int minL = minDepthRecursive(root.left);
             int minR = minDepthRecursive(root.right);
-            if(root.left == null){
+            if (root.left == null) {
                 return minR + 1;
-            }
-            else if(root.right == null){
+            } else if (root.right == null) {
                 return minL + 1;
             }
             return (minL > minR ? minR : minL) + 1;
