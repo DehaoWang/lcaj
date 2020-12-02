@@ -21,7 +21,6 @@ public class Knapsack {
     }
 
     public static int knapsackDP(int[] weights, int[] values, int maxWeight) {
-        ArrayList<Integer> res = new ArrayList<>();
         int n = weights.length;
         int[][] dp = new int[n + 1][maxWeight + 1];
         for (int i = 1; i < n + 1; i++) {
