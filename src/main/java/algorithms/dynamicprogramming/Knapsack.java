@@ -1,5 +1,7 @@
 package algorithms.dynamicprogramming;
 
+import algorithms.utils.MatrixUtils;
+
 import java.util.ArrayList;
 
 public class Knapsack {
@@ -35,7 +37,7 @@ public class Knapsack {
                 }
             }
         }
-//        MatrixMethods.printMatrix(dp);
+        MatrixUtils.printMatrix(dp);
         return dp[n][maxWeight];
     }
 }
