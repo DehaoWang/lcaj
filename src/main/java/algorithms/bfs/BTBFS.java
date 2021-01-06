@@ -35,7 +35,8 @@ public class BTBFS {
             for (int i = 0; i < size; i++) {
                 TreeNode curr = queue.poll();
                 // reversed
-                level.add(0, curr.val);
+//                level.add(0, curr.val);
+                level.add(curr.val);
                 if (curr.left != null) {
                     queue.offer(curr.left);
                 }
@@ -44,9 +45,9 @@ public class BTBFS {
                 }
             }
             // ordinary
-//            res.add(level);
+            res.add(level);
             // reversed
-            res.add(0, level);
+//            res.add(0, level);
             depth++;
         }
         System.out.println("depth = " + depth);

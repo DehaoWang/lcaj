@@ -23,7 +23,7 @@ public class NQueens {
 //        NQueens nQueens1 = new NQueens(sampleBoard);
 //        System.out.println(nQueens1.isValid());
 
-        int n = 4;
+        int n = 8;
         NQueens nQueens = new NQueens();
         System.out.println(nQueens.generateNNQueens(n));
     }

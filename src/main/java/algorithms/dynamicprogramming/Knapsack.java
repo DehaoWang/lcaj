@@ -9,12 +9,14 @@ public class Knapsack {
         int[][] weightsList = {
                 {2, 1, 3},
                 {5, 4, 7, 2, 6},
+                {2, 3, 4, 5}
         };
         int[][] valuesList = {
                 {4, 2, 3},
-                {12, 3, 10, 3, 6}
+                {12, 3, 10, 3, 6},
+                {16, 19, 23, 28}
         };
-        int[] maxWeights = {4, 15};
+        int[] maxWeights = {4, 15, 7};
         for (int i = 0; i < weightsList.length; i++) {
             System.out.println(knapsackDP(weightsList[i], valuesList[i], maxWeights[i]));
         }
